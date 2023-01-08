@@ -1,0 +1,199 @@
+.header-post {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .user-posts {
+        display: flex;
+        .name-time-user {
+            align-items: center;
+            padding: 0px 7px 0px;
+            .span-title{
+                padding: 0;
+            }
+            .time-post {
+                font-weight: 400;
+                display: flex;
+                height: 10px;
+                align-items: center;
+                color: var(--color-icon);
+                font-size: 12px;
+                margin-top: 3px;
+                span {
+                    &:nth-child(3) {
+                        height: 12px;
+                    }
+                    + span {
+                        margin-left: 3px;
+                    }
+                }
+            }
+        }
+    }
+
+    .edit-posts {
+        .edit-posts-icon {
+            i {
+                color: var(--color-icon);
+                fill: var(--color-icon);
+            }
+            padding: 10px;
+        }
+    }
+}
+
+.content-posts {
+    font-family: var(--main-font-family);
+    font-weight: 400;
+    // position: relative;
+    .content-posts-title {
+        padding: 0px 15px;
+        display: flex;
+        flex-direction: column;
+        span {
+            padding-bottom: 5px;
+            + span {
+                padding-bottom: 5px;
+            }
+        }
+    }
+    .content-posts-image {
+        // position: absolute;
+        padding: 10px 0px;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.interactive {
+    // position: fixed;
+    padding: 0px 15px;
+    position: relative;
+    .detail-interactive {
+        display: flex;
+        .detail-title {
+            width: 100%;
+            padding: 0px 5px;
+            font-family: inherit;
+            font-weight: 400;
+            display: flex;
+            // justify-content: space-between;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .detail-icon {
+            display: flex;
+            span {
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                width: 18px;
+                height: 18px;
+                border: 1px solid rgb(255, 255, 255);
+                z-index: var(--z-index-icon);
+                &:nth-child(2) {
+                    margin-left: -4px;
+                    z-index: calc(var(--z-index-icon) - 1);
+                }
+                &:nth-child(3) {
+                    margin-left: -4px;
+                    z-index: calc(var(--z-index-icon) - 2);
+                }
+            }
+        }
+    }
+
+    > ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--color-icon);
+        position: relative;
+        > li {
+            width: 100%;
+            display: flex;
+            height: 34px;
+            position: relative;
+            padding: 10px 0px 5px;
+            align-items: center;
+            // animation: likeActive 0.5s ease;
+
+            div {
+                transition: all 0.1s ease;
+                width: 100%;
+                height: 34px;
+                // padding: 10px 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: -6px -4px;
+                border-radius: 5px;
+                > i {
+                    -webkit-filter: var(--color-icon-interactive);
+                }
+                span {
+                    padding: 0px 7px;
+                    color: var(--color-icon);
+                }
+            }
+            &:hover {
+                div {
+                    background-color: var(--hover-overlay);
+                }
+            }
+            + li {
+                margin-left: 10px;
+            }
+            &:active{
+                animation: likeActive 0.5s ease;
+                @keyframes likeActive {
+                    0% {
+                        transform: scale(0.9);
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+
+        &:after {
+            content: "";
+            background: var(--border-bottom);
+            position: absolute;
+            top: 10%;
+            // left: 8px;
+            height: 1px;
+            width: 100%;
+        }
+
+        .like-active {
+
+            div {
+                i {
+                    -webkit-filter: var(--filter-accent);
+                    background-position: 0px -232px;
+                    animation: handleLikeIcon 0.5s ease;
+                    @keyframes handleLikeIcon {
+                        0% {
+                            transform: scale(1) rotate(355deg);
+                        }
+                        50% {
+                            transform: scale(1.2) rotate(350deg);
+
+                        }
+                        100% {
+                            transform: scale(1) rotate(359deg);
+                        }
+                    }
+                }
+                span {
+                    padding: 0px 7px;
+                    color: var(--accent);
+                }
+            }
+        }
+    }
+}
