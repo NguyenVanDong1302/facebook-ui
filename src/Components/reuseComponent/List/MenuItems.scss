@@ -46,9 +46,13 @@
                 }
             }
         }
-        .home-active {
+        .home-active,
+        .discover-active {
             .tag__icon {
                 background-color: var(--color-button-active);
+            }
+            i {
+                -webkit-filter: var(--filter-always-white);
             }
         }
         .live-active {

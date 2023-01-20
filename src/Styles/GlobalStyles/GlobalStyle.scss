@@ -123,8 +123,12 @@ a.active {
 }
 
 [class*="-page-wrapper"] {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
     [class*="-page-content"] {
-        // height: 2000px;
         width: 100%;
         display: flex;
         align-items: center;
@@ -143,5 +147,3 @@ a.active {
     font-weight: 500;
     padding: 0 10px;
 }
-
-

@@ -301,10 +301,12 @@ export const ListFeatureGroup = [
             {
                 title: 'Bảng feed của bạn',
                 icon: <NewFeedIcon />,
+                to:'/group'
             },
             {
                 title: 'Khám phá',
                 icon: <DiscoverIcon />,
+                to:'/group/discover'
             },
             {
                 button: <Button title="Tạo nhóm mới" icon={<AddIcon />} />,

@@ -276,6 +276,20 @@ export const DotHorizontalIcon = ({ className, width = '16px', height = '16px' }
         }}
     ></i>
 );
+export const DotHorizontal2Icon = ({ className, width = '24px', height = '24px' }) => (
+    <i
+        className={className}
+        style={{
+            backgroundImage: `url("https://static.xx.fbcdn.net/rsrc.php/v3/yM/r/jOaH_xQC3hp.png")`,
+            backgroundPosition: '-158px -26px',
+            backgroundSize: '189px 177px',
+            width: width,
+            height: height,
+            backgroundRepeat: 'no-repeat',
+            display: 'inline-block',
+        }}
+    ></i>
+);
 export const GameIcon2 = ({ className }) => (
     <i
         className={className}
@@ -625,6 +639,20 @@ export const LoudspeakerIcon = ({ className }) => (
         }}
     ></i>
 );
+export const MapIcon2 = ({ className }) => (
+    <i
+        className={className}
+        style={{
+            backgroundImage: `url("https://static.xx.fbcdn.net/rsrc.php/v3/yo/r/4h0f7HFvVvc.png")`,
+            backgroundPosition: '0px -761px',
+            backgroundSize: '37px 778px',
+            width: '16px',
+            height: '16px',
+            backgroundRepeat: 'no-repeat',
+            display: 'inline-block',
+        }}
+    ></i>
+);
 
 function customImg(nameImg) {
     return (
@@ -811,7 +839,6 @@ export const LikeIcon = () => (
         }}
     ></i>
 );
-
 
 export const CommentIcon = () => (
     <i

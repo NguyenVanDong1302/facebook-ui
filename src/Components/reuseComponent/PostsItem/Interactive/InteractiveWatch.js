@@ -1,40 +1,20 @@
 import React from 'react';
-
 import { CommentIcon, DearIcon, HeartPostsIcon, LikeIcon, ShareIcon, WowIcon } from '~/Asset';
-import './Interactive.scss';
 
-function Interactive({ items }) {
+function InteractiveWatch({ items }) {
     const handleLike = () => {
         const classLike = '.button-like-' + items.idPosts;
-        
+
         const elmLike = document.querySelector(classLike);
         const elmLikeIcon = document.querySelector(classLike + ' i');
-        console.log(elmLike.classList.value.includes('like-active'));
         elmLike.classList.value.includes('like-active')
             ? (elmLikeIcon.style.backgroundPosition = '0px -251px')
             : (elmLikeIcon.style.backgroundPosition = '0px -232px');
         elmLike.classList.toggle('like-active');
     };
     return (
-        <div className={'interactive'}>
-            <div className={'detail-interactive'}>
-                <div className={'detail-icon'}>
-                    <span>
-                        <HeartPostsIcon />
-                    </span>
-                    <span>
-                        <DearIcon />
-                    </span>
-                    <span>
-                        <WowIcon />
-                    </span>
-                </div>
-                <div className={'detail-title'}>
-                    <div className={'link'}>Thu Phương và 4,5k người khác</div>
-                    <div className={'comment'}>114 bình luận</div>
-                </div>
-            </div>
-            <ul className={'feature-interactive'}>
+        <div className={'interactive interactive-watch'}>
+            <ul className={'feature-interactive feature-interactive-watch'}>
                 <li className={`button-like-${items.idPosts}`} onClick={handleLike}>
                     <div>
                         <LikeIcon />
@@ -54,8 +34,28 @@ function Interactive({ items }) {
                     </div>
                 </li>
             </ul>
+            <div className={'detail-interactive'}>
+                <div className={'detail-icon'}>
+                    <span>
+                        <HeartPostsIcon />
+                    </span>
+                    <span>
+                        <DearIcon />
+                    </span>
+                    <span>
+                        <WowIcon />
+                    </span>
+                </div>
+                <div className={'detail-title'}>
+                    <span className={'link'}>4,5k </span>
+                    <div className="space"> · </div>
+                    <span className={'comment'}>114 bình luận</span>
+                    <div className="space"> · </div>
+                    <span className={'view'}>693k lượt xem</span>
+                </div>
+            </div>
         </div>
     );
 }
 
-export default Interactive;
+export default InteractiveWatch;

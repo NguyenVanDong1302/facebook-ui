@@ -15,7 +15,7 @@ function SidebarLeft({ data }) {
     if (checkPage === '') {
         checkPage = 'home';
     }
-    // console.log(data);
+
     return (
         <div className={`sidebar-left-wrapper `}>
             <div className={`sidebar-left-items ${checkPage + '-sidebar-left-items'}`}>

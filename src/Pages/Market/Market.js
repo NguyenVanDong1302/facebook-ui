@@ -6,7 +6,7 @@ import './Market.scss'
 function MarketPlace() {
     document.title = 'Facebook Marketplace | Facebook '
     return (
-        <div className="watch-page-wrapper">
+        <div className="market-page-wrapper">
             <SidebarLeft data={ListFeatureMarket} />
                 <Outlet />
         </div>

@@ -161,7 +161,6 @@
                 background-color: var(--hover-overlay);
             }
         }
-
     }
 
     .sidebar-right-item {
@@ -178,5 +177,11 @@
                 top: 0;
             }
         }
+    }
+}
+
+@media (min-width: 1100px) and (max-height: 789px), (max-width: 1100px) and (max-width: 1379px) {
+    .sidebar-right-wrapper {
+        display: none;
     }
 }

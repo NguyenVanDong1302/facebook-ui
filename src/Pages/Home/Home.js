@@ -4,7 +4,6 @@ import { ListFeatureUser1 } from '~/Components/reuseComponent/List/List';
 import SidebarRight from '~/Components/reuseComponent/Sidebar/SidebarRight';
 import PostsStory from './HomeContentItems/PostStory/PostsStory';
 import PostsNews from './HomeContentItems/PostsNews/PostsNews';
-import TestFireBase from './HomeContentItems/PostsNews/TestfireBase';
 function HomePage() {
     document.title = 'Facebook';
     return (
@@ -14,7 +13,6 @@ function HomePage() {
                 <div className="home-page-content__items">
                     <PostsStory />
                     <PostsNews />
-                    {/* <TestFireBase />  */}
                 </div>
             </div>
             <SidebarRight />
