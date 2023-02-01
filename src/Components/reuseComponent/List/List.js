@@ -301,12 +301,12 @@ export const ListFeatureGroup = [
             {
                 title: 'Bảng feed của bạn',
                 icon: <NewFeedIcon />,
-                to:'/group'
+                to: '/group',
             },
             {
                 title: 'Khám phá',
                 icon: <DiscoverIcon />,
-                to:'/group/discover'
+                to: '/group/discover',
             },
             {
                 button: <Button title="Tạo nhóm mới" icon={<AddIcon />} />,
@@ -371,16 +371,17 @@ export const ListFeatureGame = [
         header: true,
         children: [
             {
+                title: 'Chơi game',
+                icon: <PlaystationIcon2 />,
+                to: '/gaming',
+            },
+            {
                 title: 'Dành cho bạn',
                 icon: <GameIcon2 />,
             },
             {
                 title: 'Video',
                 icon: <StopVideoIcon />,
-            },
-            {
-                title: 'Chơi game',
-                icon: <PlaystationIcon2 />,
             },
             {
                 title: 'Thông báo',
@@ -497,5 +498,5 @@ export const ListFeatureGame = [
 ];
 
 export const ListFriends = (children) => {
-    return [{ title: 'Người liên hệ', children }]
+    return [{ title: 'Người liên hệ', children }];
 };

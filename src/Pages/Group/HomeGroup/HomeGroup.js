@@ -32,11 +32,10 @@ function HomeGroup() {
     return (
         <div className="group-page-wrapper">
             <div className="group-page-content">
-                this is home group page
                 <div className="group-posts__items">
                     {posts.map((post, index) => {
                         const dbUser = listUser.find((user) => user.idUser === post.idUser);
-                        const dbGroup = listGroup.find((group) => group.idGroup === post.idGroup)
+                        const dbGroup = listGroup.find((group) => group.idGroup === post.idGroup);
                         return <PostsItem items={post} dataUser={dbUser} key={index} pages={pages} dbGroup={dbGroup} />;
                     })}
                 </div>

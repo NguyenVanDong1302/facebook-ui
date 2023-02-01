@@ -5,7 +5,7 @@ import SidebarLeft from "~/Components/reuseComponent/Sidebar/SidebarLeft";
 function GamePage() {
     document.title = 'Facebook Gaming | Xem buổi phát trực tiếp trò chơi điện tử | Facebook';
     return (
-        <div className="Group-page-wrapper">
+        <div className="game-page-wrapper">
             <SidebarLeft data={ListFeatureGame} />
             <Outlet />
         </div>

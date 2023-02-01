@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import GamePage from '~/Pages/Game/Game';
+import GameHome from '~/Pages/Game/GameConponent/GameHome';
 import GroupPage from '~/Pages/Group/Group';
 import HomeGroup from '~/Pages/Group/HomeGroup/HomeGroup';
 import HomePage from '~/Pages/Home/Home';
@@ -31,7 +32,9 @@ function Content() {
                 <Route path="/group" element={<HomeGroup />} />
                 <Route path="/group/discover" element={<HomeGroup />} />
             </Route>
-            <Route path="/gaming" element={<GamePage />} />
+            <Route path="/gaming" element={<GamePage />}>
+                <Route path="/gaming" element={<GameHome />} />
+            </Route>
         </Routes>
     );
 }

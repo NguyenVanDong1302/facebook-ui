@@ -1,0 +1,24 @@
+.group-page-content {
+    .game-topPick-wrapper,
+    .game-all-game-wrapper {
+        width: 100%;
+        .game-topPick-title,
+        .game-all-game-title {
+            font-family: inherit;
+            padding: 2px 0px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-text);
+            margin-left: 10px;
+        }
+        .game-topPick-list,
+        .game-all-game-list {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .game-all-game-list{
+            margin-left: 10px;
+        }
+    }
+}
