@@ -8,6 +8,7 @@ function AvatarUser({
     width = '36px',
     height = '36px',
     alt,
+    online,
     src = 'https://github.com/NguyenVanDong1302/facebook-ui/blob/main/src/Asset/Image/AvatarUser/noavatar.png?raw=true',
 }) {
     const [fallback, setFallback] = useState('');
@@ -17,16 +18,19 @@ function AvatarUser({
         );
     };
     return (
-        <img
-            className={cx('user-avatar-sidebar', className)}
-            src={fallback || src}
-            alt={alt}
-            onError={handleError}
-            style={{
-                width,
-                height,
-            }}
-        />
+        <div className={cx('user-avatar-wrapper')}>
+            <img
+                className={cx('user-avatar-sidebar', className)}
+                src={fallback || src}
+                alt={alt}
+                onError={handleError}
+                style={{
+                    width,
+                    height,
+                }}
+            />
+            {online === true ? <span className={cx('user-avatar-online')}></span> : null}
+        </div>
     );
 }
 

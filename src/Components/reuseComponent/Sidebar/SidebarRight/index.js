@@ -88,7 +88,7 @@ function SidebarRight() {
                     <div className="tag-user__menu__list__user">
                         {results.map((item, index) => (
                             <div className="tag-user" key={index}>
-                                <AvatarUser src={item.img} alt={item.name} />
+                                <AvatarUser src={item.img} alt={item.name} online={item.online} />
                                 <span className="tag-user__name span-title">{item.name}</span>
                             </div>
                         ))}

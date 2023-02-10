@@ -2,11 +2,11 @@ import AvatarImage from '../Avatar/Avatar';
 import './Tag.scss';
 
 function TagItem({ items = [] }) {
-
     const RenderIcon = () => {
+
         if (items.image || items.img) {
-            return <span className={'tag__image'}>{items.image || <AvatarImage src={items.img} />}</span>;
-        } else if (items.icon) {
+            return <span className={'tag__image'}>{items.image || <AvatarImage src={items.img} type={items.type} />}</span>;
+        } else if (items.icon) {  
             return <span className={'tag__icon'}>{items.icon}</span>;
         } else if (items.button) {
             return items.button;

@@ -98,11 +98,12 @@ export const ListFeatureUser1 = [
         title: 'Lối tắt của bạn',
         children: [
             {
-                title: 'Mua bán điện thoại cũ Hà Nội',
+                title: 'Động phím cơ',
                 image: (
                     <AvatarImage
                         className="avatar__shortcut"
-                        // src="https://raw.githubusercontent.com/NguyenVanDong1302/facebook-ui/main/src/Asset/Image/group1.jpg?token=GHSAT0AAAAAAB4M6O7PC3PFSTTXILGFTPJEY5NIJGQ"
+                        src="https://firebasestorage.googleapis.com/v0/b/facebook-ui-6f536.appspot.com/o/image%2Fgroup%2Fdong%20phim%20co.jpg?alt=media&token=65793640-abf2-4c6c-969a-8b062af6de04"
+                        type = 'group'
                     />
                 ),
             },
@@ -111,16 +112,8 @@ export const ListFeatureUser1 = [
                 image: (
                     <AvatarImage
                         className="avatar__shortcut"
-                        // src="https://raw.githubusercontent.com/NguyenVanDong1302/facebook-ui/main/src/Asset/Image/group1.jpg?token=GHSAT0AAAAAAB4M6O7PC3PFSTTXILGFTPJEY5NIJGQ"
-                    />
-                ),
-            },
-            {
-                title: 'Tuyển Dụng Lập Trình Viên - Việc Làm IT',
-                image: (
-                    <AvatarImage
-                        className="avatar__shortcut"
-                        // src="https://raw.githubusercontent.com/NguyenVanDong1302/facebook-ui/main/src/Asset/Image/group1.jpg?token=GHSAT0AAAAAAB4M6O7PC3PFSTTXILGFTPJEY5NIJGQ"
+                        src="https://firebasestorage.googleapis.com/v0/b/facebook-ui-6f536.appspot.com/o/image%2Fgroup%2F271848083_115463984341696_4436017631364347794_n.jpg?alt=media&token=9341408c-e8a5-4a2f-a782-f71d65ab5031"
+                        type = 'group'
                     />
                 ),
             },
@@ -129,7 +122,8 @@ export const ListFeatureUser1 = [
                 image: (
                     <AvatarImage
                         className="avatar__shortcut"
-                        // src="https://raw.githubusercontent.com/NguyenVanDong1302/facebook-ui/main/src/Asset/Image/group1.jpg?token=GHSAT0AAAAAAB4M6O7PC3PFSTTXILGFTPJEY5NIJGQ"
+                        src="https://firebasestorage.googleapis.com/v0/b/facebook-ui-6f536.appspot.com/o/image%2Fgroup%2F254624638_1981231418700067_1333473650235194706_n.jpg?alt=media&token=84526289-88c5-49e4-a90f-ae5bef583d63"
+                        type = 'group'
                     />
                 ),
             },

@@ -1,13 +1,15 @@
+import { Button } from '@mui/material';
 import HeaderCenter from './headerComponent/headerCenter';
 import HeaderLeft from './headerComponent/headerLeft';
 import HeaderRight from './headerComponent/headerRight';
 
 function Header() {
     return (
-        <div className='mainHeader'>
+        <div className="mainHeader">
             <HeaderLeft />
             <HeaderCenter />
             <HeaderRight />
+            ;
         </div>
     );
 }

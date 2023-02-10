@@ -9,16 +9,15 @@ function HeaderPosts({ pages, dataUser, dbGroup }) {
         <div className={`header-post ${pages === 'watch' ? 'header-posts-watch' : ''}`}>
             <div className={'user-posts'}>
                 <div className={'avatar-user'}>
-                    <AvatarImage width="40px" height="40px" src={dataUser.avatar} pages={pages} />
+                    {/* <AvatarImage width="40px" height="40px" src={dataUser.avatar} pages={pages} /> */}
                 </div>
                 <div className={'name-time-user'}>
                     {pages === 'group' ? (
                         <span className={`span-title span-title__${pages}`}>{dbGroup.name}</span>
-                    ) : (
-                        <span className={`span-title`}>{dataUser.name}</span>
-                    )}
+                    ) : // <span className={`span-title`}>{dataUser.name}</span>
+                    undefined}
                     <div className={'time-post'}>
-                        {pages === 'group' ? <span>{dataUser.name} · </span> : undefined}
+                        {/* {pages === 'group' ? <span>{dataUser.name} · </span> : undefined} */}
                         <span>1 giờ</span>
                         <span>·</span>
                         <span>

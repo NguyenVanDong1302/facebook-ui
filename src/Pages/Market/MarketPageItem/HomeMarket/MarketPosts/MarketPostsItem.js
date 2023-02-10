@@ -2,10 +2,9 @@
 import React from 'react';
 import './MarketPostsItem.scss';
 
-function MarketPostItem({ items }) {
-
+function MarketPostItem({ items, key }) {
     return (
-        <div className="market-posts-item">
+        <div className="market-posts-item" key={key}>
             <div className="market-posts__image">
                 <img src={items.image} alt="market-posts__image" />
             </div>

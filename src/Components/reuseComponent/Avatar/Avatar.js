@@ -8,6 +8,7 @@ function AvatarImage({
     width,
     height,
     pages,
+    type,
 }) {
     const [fallback, setFallback] = useState('');
     const HandleError = () => {
@@ -15,16 +16,18 @@ function AvatarImage({
             'https://github.com/NguyenVanDong1302/facebook-ui/blob/main/src/Asset/Image/AvatarUser/noavatar.png?raw=true',
         );
     };
+    const checkType = type !== undefined ? 'checkType__' + type : '';
+    // console.log(checkType);
     return (
         <div className="avatar-image-wrapper">
             <div
-                className={`avatar-image ${pages === 'group' ? 'avatar-group' : ''}`}
+                className={`avatar-image ${pages === 'group' ? 'avatar-group' : ''} ${checkType}`}
                 style={{
                     width: width,
                     height: height,
                 }}
             >
-                <img className={'avatar__image'} src={src} alt="avatarImage" onError={HandleError} />
+                <img className={`avatar__image `} src={src} alt="avatarImage" onError={HandleError} />
                 <div className="icon-user-online"></div>
             </div>
             {pages === 'group' ? (

@@ -1,5 +1,6 @@
 .game-item-wrapper {
     box-shadow: var(--box-shadow-feature-user);
+    cursor: pointer;
     + .game-item-wrapper {
         margin-left: 10px;
     }

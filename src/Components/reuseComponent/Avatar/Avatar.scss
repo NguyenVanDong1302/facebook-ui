@@ -25,6 +25,13 @@
         overflow: hidden;
     }
 }
+.checkType__group {
+    border-radius: 10px;
+    .avatar__image{
+        height: 100%;
+        width: auto;
+    }
+}
 .avatar__shortcut {
     width: 36px;
     height: 36px;

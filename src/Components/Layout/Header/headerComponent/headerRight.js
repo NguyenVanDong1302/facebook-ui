@@ -1,11 +1,22 @@
 import { MenuIcon, MessengerIcon, NotificationIcon } from '~/Asset/HeaderRight';
 import AvatarImage from '~/Components/reuseComponent/Avatar/Avatar';
+import * as React from 'react';
+
+import Switch from '@mui/material/Switch';
+import Login from '~/Components/Login/Login';
 
 function HeaderRight() {
+    const [checked, setChecked] = React.useState(true);
+
+    const handleChange = (event) => {
+        setChecked(event.target.checked);
+    };
     return (
         <div className="header-right">
             <ul>
-                <li className="active">
+                {/* <Switch/> */}
+    
+                <li className="">
                     <div className="header-right-item active">
                         <MenuIcon />
                     </div>

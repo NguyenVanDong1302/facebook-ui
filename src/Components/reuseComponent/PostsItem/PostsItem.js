@@ -31,7 +31,7 @@ function PostsItem({ items, dataUser, pages, dbGroup = undefined }) {
         return (
             <div className="content-posts__title">
                 {title.map((item, index) => {
-                    return <span>{item}</span>;
+                    return <span key={index}>{item}</span>;
                 })}
             </div>
         );

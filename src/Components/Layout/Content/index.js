@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
+import Login from '~/Components/Login/Login';
 import GamePage from '~/Pages/Game/Game';
 import GameHome from '~/Pages/Game/GameConponent/GameHome';
 import GroupPage from '~/Pages/Group/Group';
@@ -17,6 +18,7 @@ function Content() {
     return (
         <Routes>
             <Route path="/" element={<HomePage />} />
+        
             <Route exact path="/watch" element={<WatchPage />}>
                 <Route path="/watch" element={<HomeWatch />} />
                 <Route path="/watch/live" element={<LiveWatch />} />

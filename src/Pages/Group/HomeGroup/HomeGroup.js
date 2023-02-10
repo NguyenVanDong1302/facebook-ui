@@ -2,6 +2,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import PostsItem from '~/Components/reuseComponent/PostsItem/PostsItem';
 import { db } from '~/firebase';
+import { groups } from '../Group';
 import './HomeGroup.scss';
 
 function HomeGroup() {
