@@ -1,21 +1,20 @@
 import React, { useContext } from 'react';
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import { AuthContext } from './context/AuthContext';
-import HomeMessage from './page/Home';
-import Home from './page/Home';
-import MainLogin from './page/Login';
-import Register from './page/Register';
+import HomeMessage from './page/HomeMessages';
+import Home from './page/HomeMessages';
+import MainLogin from './page/Login/Login';
+import Register from './page/Register/Register';
 
 function PageMessages() {
     const { currentUser } = useContext(AuthContext);
     const ProtectedRoute = ({ children }) => {
         if (!currentUser) {
             console.log('testing');
-            return <Navigate to="/login"/>;
+            return <Navigate to="/login" />;
         }
         return children;
     };
-    console.log(currentUser);
     <Routes path="/">
         <Route
             index

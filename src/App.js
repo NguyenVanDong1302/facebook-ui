@@ -3,8 +3,8 @@ import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import Content from './Components/Layout/Content';
 import Header from './Components/Layout/Header';
 import { AuthContext } from './Pages/Messages/context/AuthContext';
-import MainLogin from './Pages/Messages/page/Login';
-import Register from './Pages/Messages/page/Register';
+import MainLogin from './Pages/Messages/page/Login/Login';
+import Register from './Pages/Messages/page/Register/Register';
 import '~/Styles/Style/StyleMessages.scss';
 
 function App() {

@@ -6,6 +6,8 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import '~/Pages/Messages/page/Login/Login.scss'
+import './Register.scss'
 
 const Register = () => {
   const [err, setErr] = useState(false);
@@ -62,25 +64,31 @@ const Register = () => {
 
   return (
     <div className="formContainer">
+      <div className="login-banner">
+        <img src="https://firebasestorage.googleapis.com/v0/b/facebook-ui-6f536.appspot.com/o/dF5SId3UHWd.png?alt=media&token=3a105ca2-5ef7-4a5e-bc0b-c3f037e4b9fb" alt="" />
+        <span className="">Facebook helps you connect and share with the people in your life.</span>
+      </div>
       <div className="formWrapper">
-        <span className="logo">Lama Chat</span>
-        <span className="title">Register</span>
-        <form onSubmit={handleSubmit}>
-          <input required type="text" placeholder="display name" />
-          <input required type="email" placeholder="email" />
-          <input required type="password" placeholder="password" />
-          <input required style={{ display: "none" }} type="file" id="file" />
-          <label htmlFor="file">
-            <img src={Add} alt="" />
-            <span>Add an avatar</span>
-          </label>
-          <button disabled={loading}>Sign up</button>
+        <form onSubmit={handleSubmit} className='form__register'>
+          <input required type="text" placeholder="Full name" />
+          <input required type="email" placeholder="Email address" />
+          <input required type="password" placeholder="New password" />
+          <div className="register__upload__avatar">
+            <input required style={{ display: "none" }} type="file" id="file" />
+            <label htmlFor="file">
+              <img src={Add} alt="" />
+              <span>Add an avatar</span>
+            </label>
+          </div>
+          <button className="button__create login__button " disabled={loading}>Sign up</button>
           {loading && "Uploading and compressing the image please wait..."}
           {err && <span>Something went wrong</span>}
         </form>
-        <p>
-          You do have an account? <Link to="/login">Login</Link>
-        </p>
+        <div className="login__after"></div>
+        <Link to="/login">
+          <button className="login__button button-login">Login</button>
+        </Link>
+
       </div>
     </div>
   );

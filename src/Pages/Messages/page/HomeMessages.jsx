@@ -1,7 +1,7 @@
 import Chat from "../components/Chat"
 import Sidebar from "../components/Sidebar"
 
-function Home() {
+function HomeMessages() {
     return (
         <div className="home">
             <div className="container">
@@ -12,4 +12,4 @@ function Home() {
     )
 }
 
-export default Home
+export default HomeMessages

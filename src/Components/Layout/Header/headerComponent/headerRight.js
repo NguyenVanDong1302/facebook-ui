@@ -4,6 +4,7 @@ import * as React from 'react';
 
 import Switch from '@mui/material/Switch';
 import Login from '~/Components/Login/Login';
+import { Link } from 'react-router-dom';
 
 function HeaderRight() {
     const [checked, setChecked] = React.useState(true);
@@ -14,17 +15,17 @@ function HeaderRight() {
     return (
         <div className="header-right">
             <ul>
-                {/* <Switch/> */}
-    
                 <li className="">
                     <div className="header-right-item active">
                         <MenuIcon />
                     </div>
                 </li>
                 <li>
-                    <div className="header-right-item">
-                        <MessengerIcon />
-                    </div>
+                    <Link to="/messages">
+                        <div className="header-right-item">
+                            <MessengerIcon />
+                        </div>
+                    </Link>
                 </li>
                 <li>
                     <div className="header-right-item">
