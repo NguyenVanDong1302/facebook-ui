@@ -24,7 +24,6 @@ function Login() {
     return (
         <div className="formContainer">
             <div className="formWrapper">
-                <div className="logo"> NicePro Chat</div>
                 <form onSubmit={handleSubmit}>
                     <input type="email" placeholder="email" />
                     <input type="password" placeholder="password" />

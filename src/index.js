@@ -6,16 +6,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyle from './Styles/GlobalStyles';
+import { AuthContextProvider } from './Pages/Messages/context/AuthContext';
+import { ChatContextProvider } from './Pages/Messages/context/ChatContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    // <React.StrictMode>
-    <Router>
-        <GlobalStyle>
-            <App />
-        </GlobalStyle>
-    </Router>,
-    // </React.StrictMode>,
+    <AuthContextProvider>
+        <ChatContextProvider>
+            <Router>
+                <GlobalStyle>
+                    <App />
+                </GlobalStyle>
+            </Router>
+        </ChatContextProvider>
+    </AuthContextProvider>,
 );
 
 // If you want to start measuring performance in your app, pass a function

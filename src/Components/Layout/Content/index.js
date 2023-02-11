@@ -1,5 +1,5 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
-import Login from '~/Components/Login/Login';
+import { useContext } from 'react';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import GamePage from '~/Pages/Game/Game';
 import GameHome from '~/Pages/Game/GameConponent/GameHome';
 import GroupPage from '~/Pages/Group/Group';
@@ -8,6 +8,11 @@ import HomePage from '~/Pages/Home/Home';
 import MarketPlacePage from '~/Pages/Market/Market';
 import HomeMarket from '~/Pages/Market/MarketPageItem/HomeMarket/HomeMarket';
 import Mailbox from '~/Pages/Market/MarketPageItem/Mailbox';
+import { AuthContext } from '~/Pages/Messages/context/AuthContext';
+import PageMessages from '~/Pages/Messages/Messages';
+import HomeMessage from '~/Pages/Messages/page/Home';
+import MainLogin from '~/Pages/Messages/page/Login';
+import Register from '~/Pages/Messages/page/Register';
 import WatchPage from '~/Pages/Watch/Watch';
 import BroadcastsWatch from '~/Pages/Watch/WatchPageItem/BroadcastsWatch';
 import HomeWatch from '~/Pages/Watch/WatchPageItem/HomeWatch/HomeWatch';
@@ -18,7 +23,6 @@ function Content() {
     return (
         <Routes>
             <Route path="/" element={<HomePage />} />
-        
             <Route exact path="/watch" element={<WatchPage />}>
                 <Route path="/watch" element={<HomeWatch />} />
                 <Route path="/watch/live" element={<LiveWatch />} />
@@ -37,6 +41,7 @@ function Content() {
             <Route path="/gaming" element={<GamePage />}>
                 <Route path="/gaming" element={<GameHome />} />
             </Route>
+            <Route path="/messages" element={<HomeMessage />} />
         </Routes>
     );
 }

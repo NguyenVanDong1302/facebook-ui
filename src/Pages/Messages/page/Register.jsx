@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Add from "~/asset/img/addAvatar.png";
+import Add from "~/Asset/ImgMessages/addAvatar.png";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth, db, storage } from "../firebase";
+import { auth, db, storage } from "~/firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { Link } from "react-router-dom";

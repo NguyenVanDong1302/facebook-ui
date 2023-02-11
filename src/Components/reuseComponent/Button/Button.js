@@ -5,7 +5,7 @@ import styles from './Button.module.scss';
 const cx = classNames.bind(styles);
 const Button = ({ title = 'click me', centerIcon }) => {
     return (
-        <button>
+        <button className='button-module'>
             {centerIcon ? <span className={cx('button-icon')}>{centerIcon}</span> : undefined}
             <span className={cx('button-title')}>{title}</span>
         </button>
