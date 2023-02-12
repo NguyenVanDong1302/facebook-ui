@@ -1,0 +1,18 @@
+.chats {
+    .userChat {
+        .userChatInfo {
+            color: var(--primary-text);
+            .userChat__last__messages {
+                font-family: inherit;
+                color: var(--secondary-text);
+                padding-top: 1px;
+                font-weight: 400;
+                font-size: var(----primary-font-size);
+                line-height: 1.2308;
+            }
+        }
+        &:hover {
+            background-color: var(--hover-overlay);
+        }
+    }
+}

@@ -723,6 +723,20 @@ export const BoxGiftsIcon = ({ className }) => (
         }}
     ></i>
 );
+export const NewChatIcon = ({ className }) => (
+    <i
+        className={className}
+        style={{
+            height: '20px',
+            width: '20px',
+            backgroundImage: "url('https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/s5R6WuiaCZN.png')",
+            backgroundPosition: '0 -536px',
+            backgroundSize: 'auto',
+            backgroundRepeat: 'no-repeat',
+            display: 'inline-block',
+        }}
+    ></i>
+);
 
 export const StoryIcon = () => (
     <svg fill="currentColor" viewBox="0 0 20 20" width="20px" height="20px">
@@ -817,6 +831,19 @@ export const CloseIcon = () => (
         style={{
             backgroundImage: 'url("https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/3GrSZwfgfnX.png")',
             backgroundPosition: '-21px -105px',
+            backgroundSize: 'auto',
+            width: '20px',
+            height: '20px',
+            backgroundRepeat: 'no-repeat',
+            display: 'inline-block',
+        }}
+    ></i>
+);
+export const ZoomIcon2 = () => (
+    <i
+        style={{
+            backgroundImage: 'url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/s5R6WuiaCZN.png")',
+            backgroundPosition: '0px -221px',
             backgroundSize: 'auto',
             width: '20px',
             height: '20px',

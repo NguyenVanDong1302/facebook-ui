@@ -5,6 +5,8 @@ import * as React from 'react';
 import Switch from '@mui/material/Switch';
 import Login from '~/Components/Login/Login';
 import { Link } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+import { auth } from '~/firebase';
 
 function HeaderRight() {
     const [checked, setChecked] = React.useState(true);
@@ -36,6 +38,9 @@ function HeaderRight() {
                     <div className="">
                         <AvatarImage />
                     </div>
+                </li>
+                <li>
+                    <button onClick={() => signOut(auth)}>Logout</button>
                 </li>
             </ul>
         </div>
