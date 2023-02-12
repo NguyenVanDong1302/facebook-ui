@@ -1,13 +1,14 @@
-import React, { useContext, useEffect, useRef } from "react";
-import { AuthContext } from "../context/AuthContext";
-import { ChatContext } from "../context/ChatContext";
+import React, { createContext, useContext, useEffect, useRef } from "react";
+import { AuthContext } from "../../../context/AuthContext";
+import { ChatContext } from "../../../context/ChatContext";
+import './Message.scss'
 
+export const MessageContext = createContext();
 const Message = ({ message }) => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
   const ref = useRef();
-
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [message]);

@@ -57,10 +57,16 @@
                     width: 100%;
                 }
             }
-            .userChat{
+            .userChat {
                 width: 100%;
-                .userChatInfo{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .userChatInfo {
                     color: var(--primary-text);
+                }
+                &:hover {
+                    background-color: var(--hover-overlay);
                 }
             }
         }

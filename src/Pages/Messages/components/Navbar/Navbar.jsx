@@ -6,6 +6,7 @@ import { DotHorizontal2Icon, NewChatIcon, ZoomIcon2 } from '~/Asset'
 import Input from '~/Components/reuseComponent/Input/FormInput'
 import './Navbar.scss'
 import { collection, doc, getDoc, getDocs, query, serverTimestamp, setDoc, updateDoc, where } from 'firebase/firestore'
+import AvatarUser from '~/Components/reuseComponent/Avatar/User/AvatarUser'
 
 function Navbar() {
   const [userName, setUserName] = useState("")
@@ -60,7 +61,6 @@ function Navbar() {
     setUser(null)
     setUserName("")
   }
-
   const { currentUser } = useContext(AuthContext)
   return (
     <div className='navbar'>
@@ -92,12 +92,13 @@ function Navbar() {
               value={userName} placeholder='Tìm kiếm trên Messages' className='search__input' />
           </div>
           {err && <span>User not found !</span>}
-          {user && <div className="userChat" onClick={handleSelect}>
-            <img src={user.photoURL} alt="" />
-            <div className="userChatInfo">
-              <span>{user.displayName}</span>
-            </div>
-          </div>}
+          {user && user.uid !== currentUser.uid &&
+            <div className="userChat" onClick={handleSelect}>
+              <AvatarUser online={true} src={user.photoURL} alt="" />
+              <div className="userChatInfo">
+                <span>{user.displayName}</span>
+              </div>
+            </div>}
         </div>
       </div>
     </div >

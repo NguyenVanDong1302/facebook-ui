@@ -1,7 +1,7 @@
 import { doc, onSnapshot } from 'firebase/firestore'
 import React, { useContext, useEffect, useState } from 'react'
 import { db } from '~/firebase'
-import { ChatContext } from '../context/ChatContext'
+import { ChatContext } from '../../../context/ChatContext'
 import Message from './Message'
 
 const Messages = () => {
@@ -21,7 +21,6 @@ const Messages = () => {
             {messages.map(m => {
                 return <Message message={m} key={m.id} />
             }
-
             )}
         </div>
     )

@@ -14,7 +14,7 @@
     --main-font-size: 0.875rem;
     --primary-font-size: 0.75rem;
     --border-button: #ced0d4;
-    --affter-top: #ced0d4;
+    --after-top: #ced0d4;
     --primary-button-background: #1b74e4;
     --after-button-active: #1b74e4;
 
@@ -58,6 +58,9 @@
     --fds-fast: 200ms;
 
     --color-background-body: #f0f2f5;
+    --comment-background: #F0F2F5;
+    --wash: #E4E6EB;
+
 }
 
 body {
@@ -147,4 +150,8 @@ a.active {
     line-height: 1.333;
     font-weight: 500;
     padding: 0 10px;
+}
+
+ul {
+    list-style: none;
 }

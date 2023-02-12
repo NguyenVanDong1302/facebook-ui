@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
-import Img from "~/Asset/ImgMessages/img.png";
 import Attach from "~/Asset/ImgMessages/attach.png";
-import { AuthContext } from "../context/AuthContext";
-import { ChatContext } from "../context/ChatContext";
+import { AuthContext } from "../../context/AuthContext";
+import { ChatContext } from "../../context/ChatContext";
 import {
     arrayUnion,
     doc,
@@ -13,6 +12,8 @@ import {
 import { db, storage } from "~/firebase";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { LikeIconMessages, OtherActionIconMessages, SendIconIconMessages, UploadGifIconMessages, UpLoadImageIconMessages, UpLoadStickerIconMessages } from "~/Asset/Messages/Index";
+import { LikeIcon } from "~/Asset";
 
 const Input = () => {
     const [text, setText] = useState("");
@@ -57,6 +58,7 @@ const Input = () => {
         await updateDoc(doc(db, "userChats", currentUser.uid), {
             [data.chatId + ".lastMessage"]: {
                 text,
+                senderId: currentUser.uid,
             },
             [data.chatId + ".date"]: serverTimestamp(),
         });
@@ -64,6 +66,7 @@ const Input = () => {
         await updateDoc(doc(db, "userChats", data.user.uid), {
             [data.chatId + ".lastMessage"]: {
                 text,
+                // senderId: currentUser.uid,
             },
             [data.chatId + ".date"]: serverTimestamp(),
         });
@@ -73,24 +76,45 @@ const Input = () => {
     };
     return (
         <div className="input">
-            <input
-                type="text"
-                placeholder="Type something..."
-                onChange={(e) => setText(e.target.value)}
-                value={text}
-            />
-            <div className="send">
-                <img src={Attach} alt="" />
+            <div className="input__option">
+                <ul>
+                    <li>
+                        <OtherActionIconMessages />
+                    </li>
+                    <li>
+                       <div>
+                            <input
+                                type="file"
+                                style={{ display: "none" }}
+                                id="file"
+                                onChange={(e) => setImg(e.target.files[0])}
+                            />
+                            <label htmlFor="file">
+                                <UpLoadImageIconMessages />
+                            </label>
+                       </div>
+                    </li>
+                    <li>
+                        <UpLoadStickerIconMessages />
+                    </li>
+                    <li>
+                        <UploadGifIconMessages />
+                    </li>
+                </ul>
+            </div>
+            <div className="input__text__message">
                 <input
-                    type="file"
-                    style={{ display: "none" }}
-                    id="file"
-                    onChange={(e) => setImg(e.target.files[0])}
+                    type="text"
+                    placeholder="Aa"
+                    onChange={(e) => setText(e.target.value)}
+                    value={text}
                 />
-                <label htmlFor="file">
-                    <img src={Img} alt="" />
-                </label>
-                <button onClick={handleSend}>Send</button>
+                <SendIconIconMessages />
+            </div>
+            <div className="send">
+                <button onClick={handleSend}>
+                    <LikeIconMessages />
+                </button>
             </div>
         </div>
     );

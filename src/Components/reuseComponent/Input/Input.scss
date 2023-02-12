@@ -1,4 +1,4 @@
-label {
+.header-search {
     display: flex;
     align-items: center;
     width: 240px;
@@ -30,9 +30,8 @@ label {
     }
 }
 
-
 @media only screen and (max-width: 1300px) {
-    label{
+    label {
         width: 222px;
     }
 }

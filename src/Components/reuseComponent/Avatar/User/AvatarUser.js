@@ -1,8 +1,7 @@
-import classNames from 'classnames/bind';
 import { useState } from 'react';
-import styles from './Avatar.module.scss';
 
-const cx = classNames.bind(styles);
+import './AvatarUser.scss';
+
 function AvatarUser({
     className,
     width = '36px',
@@ -18,9 +17,9 @@ function AvatarUser({
         );
     };
     return (
-        <div className={cx('user-avatar-wrapper')}>
+        <div className={`user-avatar-wrapper ${className}`}>
             <img
-                className={cx('user-avatar-sidebar', className)}
+                className={`user-avatar-sidebar `}
                 src={fallback || src}
                 alt={alt}
                 onError={handleError}
@@ -29,7 +28,7 @@ function AvatarUser({
                     height,
                 }}
             />
-            {online === true ? <span className={cx('user-avatar-online')}></span> : null}
+            {online === true ? <span className={'user-avatar-online'}></span> : null}
         </div>
     );
 }

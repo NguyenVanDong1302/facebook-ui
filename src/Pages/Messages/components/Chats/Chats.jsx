@@ -4,6 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { ChatContext } from "../../context/ChatContext";
 import { db } from "~/firebase";
 import './Chats.scss'
+import AvatarUser from "~/Components/reuseComponent/Avatar/User/AvatarUser";
 
 const Chats = () => {
   const [chats, setChats] = useState([]);
@@ -29,23 +30,23 @@ const Chats = () => {
     dispatch({ type: "CHANGE_USER", payload: u });
   };
 
-
-  console.log(currentUser.uid);
   return (
     <div className="chats">
       {Object.entries(chats)?.sort((a, b) => b[1].date - a[1].date).map((chat) => {
-        console.log(chat[1].userInfo.uid);
+        const senderId = chat[1].lastMessage?.senderId
+        const userId = currentUser.uid
         return (
-
           <div
             className="userChat"
             key={chat[0]}
             onClick={() => handleSelect(chat[1].userInfo)}
           >
-            <img src={chat[1].userInfo.photoURL} alt="" />
+            <AvatarUser online={true} className='userChat__avatar' src={chat[1].userInfo.photoURL} alt="" height="56px" width="56px" />
             <div className="userChatInfo">
               <span>{chat[1].userInfo.displayName}</span>
-              <p className="userChat__last__messages">{chat[1].lastMessage?.text}</p>
+              <p className="userChat__last__messages">
+                {senderId === userId ? 'Bạn: ' : ''}
+                {chat[1].lastMessage?.text}</p>
             </div>
           </div>
         )
