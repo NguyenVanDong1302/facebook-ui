@@ -3,7 +3,7 @@ import Cam from '~/Asset/ImgMessages/cam.png'
 import Add from '~/Asset/ImgMessages/add.png'
 import More from '~/Asset/ImgMessages/more.png'
 import Messages from './Message/Messages'
-import Input from './Input'
+import Input from './Message/Input'
 import { ChatContext } from '../../context/ChatContext'
 import AvatarUser from '~/Components/reuseComponent/Avatar/User/AvatarUser'
 

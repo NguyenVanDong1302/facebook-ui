@@ -50,3 +50,15 @@
         }
     }
 }
+
+.message__showDate {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    line-height: 1.3333;
+    font-size: var(--primary-font-size);
+    color: var(--placeholder-text);
+
+}

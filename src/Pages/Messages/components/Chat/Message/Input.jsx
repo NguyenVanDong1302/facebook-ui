@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import Attach from "~/Asset/ImgMessages/attach.png";
-import { AuthContext } from "../../context/AuthContext";
-import { ChatContext } from "../../context/ChatContext";
+import { AuthContext } from "../../../context/AuthContext";
+import { ChatContext } from "../../../context/ChatContext";
 import {
     arrayUnion,
     doc,
@@ -74,6 +74,9 @@ const Input = () => {
         setText("");
         setImg(null);
     };
+    const handleKey = (e) => {
+        e.code === 'Enter' && handleSend()
+    }
     return (
         <div className="input">
             <div className="input__option">
@@ -82,7 +85,7 @@ const Input = () => {
                         <OtherActionIconMessages />
                     </li>
                     <li>
-                       <div>
+                        <div>
                             <input
                                 type="file"
                                 style={{ display: "none" }}
@@ -92,7 +95,7 @@ const Input = () => {
                             <label htmlFor="file">
                                 <UpLoadImageIconMessages />
                             </label>
-                       </div>
+                        </div>
                     </li>
                     <li>
                         <UpLoadStickerIconMessages />
@@ -107,6 +110,7 @@ const Input = () => {
                     type="text"
                     placeholder="Aa"
                     onChange={(e) => setText(e.target.value)}
+                    onKeyDown={handleKey}
                     value={text}
                 />
                 <SendIconIconMessages />
