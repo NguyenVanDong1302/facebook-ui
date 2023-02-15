@@ -6,6 +6,7 @@ import InteractiveWatch from './Interactive/InteractiveWatch';
 import HeaderPosts from './HeaderPosts/HeaderPosts';
 
 function PostsItem({ items, dataUser, pages, dbGroup = undefined }) {
+
     const handleShowContent = () => {
         if (items.video) {
             return (
@@ -15,10 +16,10 @@ function PostsItem({ items, dataUser, pages, dbGroup = undefined }) {
                     </video>
                 </div>
             );
-        } else if (items.image) {
+        } else if (items.img) {
             return (
                 <div className="posts-item-image">
-                    <img src={items.image} alt="" />
+                    <img src={items.img} alt="" />
                 </div>
             );
         } else {
@@ -27,7 +28,7 @@ function PostsItem({ items, dataUser, pages, dbGroup = undefined }) {
     };
 
     const handleTitlePosts = () => {
-        const title = items.title.split('&enter');
+        const title = items.textContent.split('&enter');
         return (
             <div className="content-posts__title">
                 {title.map((item, index) => {
@@ -40,9 +41,11 @@ function PostsItem({ items, dataUser, pages, dbGroup = undefined }) {
         <PopperWrapper>
             <HeaderPosts pages={pages} dataUser={dataUser} dbGroup={dbGroup} />
             <div className={'content-posts'}>
-                {items.title ? (
+                {items.textContent ? (
                     <div className={`content-posts-title ${pages === 'watch' ? 'content-posts-title-watch' : ''}`}>
                         <span>{handleTitlePosts()}</span>
+                        <span>
+                        </span>
                     </div>
                 ) : undefined}
                 <div className={`content-posts-items ${pages === 'watch' ? 'content-posts__items-watch' : ''}`}>

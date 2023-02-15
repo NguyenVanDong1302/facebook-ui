@@ -17,7 +17,6 @@ function AvatarImage({
         );
     };
     const checkType = type !== undefined ? 'checkType__' + type : '';
-    // console.log(checkType);
     return (
         <div className="avatar-image-wrapper">
             <div

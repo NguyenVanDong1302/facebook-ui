@@ -44,6 +44,7 @@ const Input = () => {
                     });
                 }
             );
+
         } else {
             await updateDoc(doc(db, "chats", data.chatId), {
                 messages: arrayUnion({
@@ -58,18 +59,19 @@ const Input = () => {
         await updateDoc(doc(db, "userChats", currentUser.uid), {
             [data.chatId + ".lastMessage"]: {
                 text,
+                img: img,
                 senderId: currentUser.uid,
             },
             [data.chatId + ".date"]: serverTimestamp(),
         });
 
-        await updateDoc(doc(db, "userChats", data.user.uid), {
-            [data.chatId + ".lastMessage"]: {
-                text,
-                // senderId: currentUser.uid,
-            },
-            [data.chatId + ".date"]: serverTimestamp(),
-        });
+        // await updateDoc(doc(db, "userChats", data.user.uid), {
+        //     [data.chatId + ".lastMessage"]: {
+        //         text,
+        //         img: img
+        //     },
+        //     [data.chatId + ".date"]: serverTimestamp(),
+        // });
 
         setText("");
         setImg(null);
@@ -77,6 +79,7 @@ const Input = () => {
     const handleKey = (e) => {
         e.code === 'Enter' && handleSend()
     }
+
     return (
         <div className="input">
             <div className="input__option">
@@ -91,6 +94,7 @@ const Input = () => {
                                 style={{ display: "none" }}
                                 id="file"
                                 onChange={(e) => setImg(e.target.files[0])}
+                                onKeyDown={handleKey}
                             />
                             <label htmlFor="file">
                                 <UpLoadImageIconMessages />

@@ -10,7 +10,7 @@ function PageMessages() {
     const { currentUser } = useContext(AuthContext);
     const ProtectedRoute = ({ children }) => {
         if (!currentUser) {
-            console.log('testing');
+
             return <Navigate to="/login" />;
         }
         return children;

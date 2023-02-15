@@ -1,4 +1,5 @@
 import Chat from "../components/Chat/Chat"
+import DetailUser from "../components/DetailUser/DetailUser"
 import Sidebar from "../components/Sidebar/Sidebar"
 
 function HomeMessages() {

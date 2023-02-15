@@ -30,7 +30,7 @@ const Message = ({ message, CheckTimeSend, CheckShowAvt }) => {
         className={`message ${message.senderId === currentUser.uid && "owner"}`}
       >
         <div className="messageInfo">
-          {datex === null ?
+          {datex === null && CheckShowAvt === false ?
             <img
               src={
                 message.senderId === currentUser.uid

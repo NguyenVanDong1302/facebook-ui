@@ -1,0 +1,81 @@
+.wrapper {
+    width: 100%;
+    height: 123px;
+    // border: 1px solid rgb(255, 255, 255);
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: var(--main-box-shadow);
+    font-family: Helvetica, Arial, sans-serif;
+    margin-bottom: 10px;
+    .input-content-post {
+        padding: 10px 15px;
+        position: relative;
+        .input-posts {
+            display: flex;
+            .input-post {
+                form {
+                    display: flex;
+                    align-items: start;
+                    justify-content: center;
+                    flex-direction: column;
+                    .input__textContent {
+                        max-width: 360px;
+                        width: 100%;
+                        height: auto;
+                        // height: auto;
+                        &::placeholder {
+                            color: var(--primary-text);
+                            opacity: 1;
+                        }
+                    }
+                    input {
+                        &:nth-child(1) {
+                            width: 100%;
+                            height: auto;
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .option {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            padding: 8px 0px 0px;
+            margin: 12px 0px 0px;
+            div {
+                width: 33%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+                border-radius: 10px;
+                transition: all 0.1s ease;
+                span {
+                    font-size: var(--main-font-size);
+                    color: var(--color-icon);
+                    margin-left: 5px;
+                    font-weight: 500;
+                }
+
+                &:hover {
+                    background-color: var(--hover-overlay);
+                }
+                + div {
+                    margin-left: 10px;
+                }
+            }
+            &:after {
+                content: "";
+                background: var(--border-bottom);
+                position: absolute;
+                top: 0;
+                height: 1px;
+                width: 100%;
+            }
+        }
+    }
+}

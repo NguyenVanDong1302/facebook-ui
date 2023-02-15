@@ -1,6 +1,6 @@
 import { SearchIcon } from '~/Asset';
 import './Input.scss'
-function Input({ placeholder = 'Tìm kiếm trên Facebook', className, onKeyDown, onChange, value }) {
+function InputSearch({ placeholder = 'Tìm kiếm trên Facebook', className, onKeyDown, onChange, value }) {
     return (
         <>
             <label className={`header-search ${className}`}>
@@ -12,4 +12,4 @@ function Input({ placeholder = 'Tìm kiếm trên Facebook', className, onKeyDow
         </>
     );
 }
-export default Input;
+export default InputSearch;

@@ -29,12 +29,27 @@ const Chats = () => {
   const handleSelect = (u) => {
     dispatch({ type: "CHANGE_USER", payload: u });
   };
-
+  const now = new Date();
+  const secondNow = now.getTime() / 1000
+// console.log(typeof chats);
   return (
     <div className="chats">
       {Object.entries(chats)?.sort((a, b) => b[1].date - a[1].date).map((chat) => {
         const senderId = chat[1].lastMessage?.senderId
         const userId = currentUser.uid
+        let showText = ''
+        const lastMess = chat[1].lastMessage?.text === "" ? showText = "đã gửi một tin nhắn" : showText = chat[1].lastMessage?.text
+        const secondSend = chat[1].date?.seconds
+
+        const HandleTimeSend = () => {
+          const timeSend = (secondNow - secondSend) / 60
+          if (timeSend < 1) {
+            return 'vài giây trước'
+          } else {
+            return Math.round(timeSend) + ' phút'
+          }
+        }
+        const showTimeSend = HandleTimeSend()
         return (
           <div
             className="userChat"
@@ -46,7 +61,10 @@ const Chats = () => {
               <span>{chat[1].userInfo.displayName}</span>
               <p className="userChat__last__messages">
                 {senderId === userId ? 'Bạn: ' : ''}
-                {chat[1].lastMessage?.text}</p>
+                {lastMess === true && senderId !== userId ? chat[1].userInfo.displayName + "đã gửi cho bạn một tin nhắn" :
+                  showText}
+                {" ·  " + showTimeSend}
+              </p>
             </div>
           </div>
         )

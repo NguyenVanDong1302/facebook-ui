@@ -929,3 +929,43 @@ export const ShareIcon = () => (
         }}
     ></i>
 );
+
+export const StreamIcon = () => (
+    <i
+        style={{
+            height: '24px',
+            width: '24px',
+            backgroundImage: "url('https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uLT5tbtoukL.png')",
+            backgroundPosition: '0 -58px',
+            backgroundSize: 'auto',
+            backgroundRepeat: 'no-repeat',
+            display: 'inline-block',
+        }}
+    ></i>
+);
+export const ImageIcon = () => (
+    <i
+        style={{
+            height: '24px',
+            width: '24px',
+            backgroundImage: "url('https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uLT5tbtoukL.png')",
+            backgroundPosition: '0 -233px',
+            backgroundSize: 'auto',
+            backgroundRepeat: 'no-repeat',
+            display: 'inline-block',
+        }}
+    ></i>
+);
+export const FaceIcon = () => (
+    <i
+        style={{
+            height: '24px',
+            width: '24px',
+            backgroundImage: "url('https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uLT5tbtoukL.png')",
+            backgroundPosition: '0 -183px',
+            backgroundSize: 'auto',
+            backgroundRepeat: 'no-repeat',
+            display: 'inline-block',
+        }}
+    ></i>
+);

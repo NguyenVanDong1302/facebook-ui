@@ -28,8 +28,6 @@ const Messages = () => {
                     const CompTime = (m.date.seconds - previousValue.date.seconds) / 60 > 5
                     var CheckTimeSend = CompTime === true ? m.date.seconds : undefined
                     var CheckShowAvt = m.senderId === previousValue.senderId ? false : true
-                    console.log(CheckShowAvt);
-
                 }
                 return <Message message={m} key={m.id}
                     CheckTimeSend={CheckTimeSend}

@@ -1,32 +1,34 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useEffect, useState } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs, onSnapshot } from 'firebase/firestore';
 import { db } from '~/firebase';
 import PostsItem from '~/Components/reuseComponent/PostsItem/PostsItem';
+import { DataUser, GetDataUser, GetPosts } from '~/Components/reuseComponent/GetDataFirestore';
 
-function PostsNews() {
-    const [posts, setPosts] = useState([]);
-    const postsCollectionRef = collection(db, 'posts-home');
-    const listUsers = collection(db, 'users');
-    const [listUser, setListUser] = useState([]);
+const PostsNews = () => {
+    // const dataPosts = GetPosts();
+    const listUser = GetDataUser();
+    const [dataPosts, setDataposts] = useState([]);
+    // const unsub = onSnapshot(
+    //     doc(db, 'testUpdatePosts', '514818e6-2088-4773-8b53-a6533258d31e'),
+    //     (doc) => {
 
+    //         setDataposts(doc.data());
+    //     },
+    //     ['514818e6-2088-4773-8b53-a6533258d31e'],
+    // );
     useEffect(() => {
-        const getUsers = async () => {
-            const data = await getDocs(postsCollectionRef);
-            setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        const unSub = onSnapshot(doc(db, 'testUpdatePosts', '514818e6-2088-4773-8b53-a6533258d31e'), (doc) => {
+            setDataposts(doc.data().NewsPost);
+        });
+        return () => {
+            unSub();
         };
-
-        const getListUser = async () => {
-            const users = await getDocs(listUsers);
-            setListUser(users.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-        };
-        getListUser();
-        getUsers();
-    }, []);
+    }, ['514818e6-2088-4773-8b53-a6533258d31e']);
 
     return (
         <div>
-            {posts.map((user, index) => {
+            {dataPosts.sort((a, b) => b?.date - a?.date)?.map((user, index) => {
                 const dbUser = listUser.find((user2) => user2.idUser === user.idUser);
                 return (
                     <div key={index}>
@@ -36,6 +38,6 @@ function PostsNews() {
             })}
         </div>
     );
-}
+};
 
 export default PostsNews;
