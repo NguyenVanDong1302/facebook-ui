@@ -956,6 +956,20 @@ export const ImageIcon = () => (
         }}
     ></i>
 );
+export const PenIcon2 = () => (
+    <i
+        style={{
+            height: '20px',
+            width: '20px',
+            backgroundImage: "url('https://static.xx.fbcdn.net/rsrc.php/v3/yo/r/7_kBAuz8Rff.png')",
+            backgroundPosition: '0px -484px',
+            backgroundSize: 'auto',
+            backgroundRepeat: 'no-repeat',
+            display: 'inline-block',
+        }}
+    ></i>
+);
+
 export const FaceIcon = () => (
     <i
         style={{

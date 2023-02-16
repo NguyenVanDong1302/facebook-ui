@@ -5,6 +5,8 @@ import { db } from '~/firebase';
 import PostsItem from '~/Components/reuseComponent/PostsItem/PostsItem';
 import { DataUser, GetDataUser, GetPosts } from '~/Components/reuseComponent/GetDataFirestore';
 
+import './PostsNews.scss'
+
 const PostsNews = () => {
     // const dataPosts = GetPosts();
     const listUser = GetDataUser();
@@ -27,12 +29,12 @@ const PostsNews = () => {
     }, ['514818e6-2088-4773-8b53-a6533258d31e']);
 
     return (
-        <div>
-            {dataPosts.sort((a, b) => b?.date - a?.date)?.map((user, index) => {
-                const dbUser = listUser.find((user2) => user2.idUser === user.idUser);
+        <div className='posts-news__wrapper'>
+            {dataPosts.sort((a, b) => b?.date - a?.date)?.map((posts, index) => {
+                const dbUser = listUser.find((user) => user.uid === posts.usrPosts);
                 return (
                     <div key={index}>
-                        <PostsItem items={user} dataUser={dbUser} />
+                        <PostsItem items={posts} dataUser={dbUser} />
                     </div>
                 );
             })}

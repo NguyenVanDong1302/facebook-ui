@@ -39,7 +39,7 @@ function PostsItem({ items, dataUser, pages, dbGroup = undefined }) {
     };
     return (
         <PopperWrapper>
-            <HeaderPosts pages={pages} dataUser={dataUser} dbGroup={dbGroup} />
+            <HeaderPosts pages={pages} dataUser={dataUser} dbGroup={dbGroup} datePosts = {items.date} />
             <div className={'content-posts'}>
                 {items.textContent ? (
                     <div className={`content-posts-title ${pages === 'watch' ? 'content-posts-title-watch' : ''}`}>

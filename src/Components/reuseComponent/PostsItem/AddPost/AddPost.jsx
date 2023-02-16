@@ -63,7 +63,6 @@ function AddPosts() {
                     </div>
                     <div className={('input-post')}>
                         <form className="addPosts__form" onSubmit={handleSubmit}>
-                            {/* <input type="text" placeholder="Bạn đang nghĩ gì?" /> */}
                             <span className='input__textContent' contentEditable='true' placeholder='Bạn đang nghĩ gì?'>
                             </span>
                             <input type="file" placeholder="Img" />
