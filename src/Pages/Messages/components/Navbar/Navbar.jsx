@@ -93,7 +93,9 @@ function Navbar() {
           </div>
           {err && <span>User not found !</span>}
           {user && user.uid !== currentUser.uid &&
-            <div className="userChat" onClick={handleSelect}>
+            <div className="userChat"
+            onClick={handleSelect} 
+            >
               <AvatarUser online={true} src={user.photoURL} alt="" />
               <div className="userChatInfo">
                 <span>{user.displayName}</span>

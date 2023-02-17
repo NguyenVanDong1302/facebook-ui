@@ -6,6 +6,7 @@ import { AuthContext } from './Pages/Messages/context/AuthContext';
 import MainLogin from './Pages/Messages/page/Login/Login';
 import Register from './Pages/Messages/page/Register/Register';
 import '~/Styles/Style/StyleMessages.scss';
+import BoxChat from './Components/BoxChat/BoxChat';
 
 function App() {
     const location = useLocation();
@@ -13,7 +14,6 @@ function App() {
     const { currentUser } = useContext(AuthContext);
     const ProtectedRoute = ({ children }) => {
         if (!currentUser) {
-
             return <Navigate to="/login" />;
         }
         return children;
@@ -25,6 +25,7 @@ function App() {
                     <ProtectedRoute>
                         <Header />
                         <Content />
+                        <BoxChat />
                     </ProtectedRoute>
                 </>
             )}

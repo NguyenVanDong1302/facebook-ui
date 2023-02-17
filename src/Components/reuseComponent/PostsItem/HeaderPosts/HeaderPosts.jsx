@@ -1,7 +1,7 @@
 import { async } from '@firebase/util';
 import Tippy from '@tippyjs/react/headless';
 import { arrayUnion, doc, Timestamp, updateDoc } from 'firebase/firestore';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { CloseIcon, OptionalIcon, PenIcon2, PublicIcon } from '~/Asset';
 import AvatarImage from '~/Components/reuseComponent/Avatar/Avatar';
 import { db } from '~/firebase';
@@ -10,29 +10,42 @@ import ShowTime from '../../ShowTime/ShowTime';
 
 import './HeaderPosts.scss';
 
-function HeaderPosts({ pages, dataUser, dbGroup, datePosts }) {
+function HeaderPosts({ pages, dataUser, dbGroup, datePosts, items }) {
+    // console.log(items);
     const { currentUser } = useContext(AuthContext)
+    const [content, setContent] = useState(items.textContent);
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const checkText = document.querySelector('.input__textContent')
+        const checkText = document.querySelector('.update__textContent')
         // const file = e.target[0].files[0];
         const textContent = checkText.innerHTML
+        // console.log(textContent);
         await updateDoc(doc(db, "testUpdatePosts", '514818e6-2088-4773-8b53-a6533258d31e'), {
-            NewsPost: arrayUnion({
-                textContent,
-                usrPosts: currentUser.uid,
-                date: Timestamp.now(),
-            })
+            // NewsPost: arrayUnion({
+            //     textContent,
+            //     usrPosts: currentUser.uid,
+            //     date: Timestamp.now(),
+            // })
         });
+        
     }
     const handleUpdatePosts = () => {
+        function handleChange(event) {
+            setContent(event.target.innerHTML);
+        }
         return <div className='edit-posts-wrapper'>
             <form className="addPosts__form" onSubmit={handleSubmit}>
-                <span className='input__textContent' contentEditable='true' placeholder='Bạn đang nghĩ gì?'>
-               hello
+                <span
+                    className='update__textContent'
+                    contentEditable='true'
+                    value={items.textContent}
+                    dangerouslySetInnerHTML={{ __html: content }}
+                    onBlur={handleChange}
+                >
+                    {/* {items.textContent} */}
                 </span>
-                <input type="file" placeholder="Img" />
-                <button className="button-login login__button">Đăng</button>
+                {/* <input type="file" placeholder="Img" /> */}
+                <button className="button__update__content__posts">Đăng</button>
             </form>
         </div>
     }
@@ -42,8 +55,6 @@ function HeaderPosts({ pages, dataUser, dbGroup, datePosts }) {
                 interactive
                 trigger="click"
                 placement="bottom-end"
-                // delay= '0, 500'
-                // hideOnClick = 'false'
                 render={
                     handleUpdatePosts
                 }>

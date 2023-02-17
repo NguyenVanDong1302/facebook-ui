@@ -38,22 +38,26 @@ function PostsItem({ items, dataUser, pages, dbGroup = undefined }) {
         );
     };
     return (
-        <PopperWrapper>
-            <HeaderPosts pages={pages} dataUser={dataUser} dbGroup={dbGroup} datePosts = {items.date} />
-            <div className={'content-posts'}>
-                {items.textContent ? (
-                    <div className={`content-posts-title ${pages === 'watch' ? 'content-posts-title-watch' : ''}`}>
-                        <span>{handleTitlePosts()}</span>
-                        <span>
-                        </span>
+        <>
+            {dataUser !== undefined &&
+                <PopperWrapper>
+                    <HeaderPosts items={items} pages={pages} dataUser={dataUser} dbGroup={dbGroup} datePosts={items.date} />
+                    <div className={'content-posts'}>
+                        {items.textContent ? (
+                            <div className={`content-posts-title ${pages === 'watch' ? 'content-posts-title-watch' : ''}`}>
+                                <span>{handleTitlePosts()}</span>
+                                <span>
+                                </span>
+                            </div>
+                        ) : undefined}
+                        <div className={`content-posts-items ${pages === 'watch' ? 'content-posts__items-watch' : ''}`}>
+                            {handleShowContent()}
+                        </div>
                     </div>
-                ) : undefined}
-                <div className={`content-posts-items ${pages === 'watch' ? 'content-posts__items-watch' : ''}`}>
-                    {handleShowContent()}
-                </div>
-            </div>
-            {pages === 'watch' ? <InteractiveWatch items={items} /> : <Interactive items={items} />}
-        </PopperWrapper>
+                    {pages === 'watch' ? <InteractiveWatch items={items} /> : <Interactive items={items} />}
+                </PopperWrapper>
+            }
+        </>
     );
 }
 

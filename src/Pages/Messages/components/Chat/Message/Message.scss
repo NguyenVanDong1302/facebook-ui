@@ -60,5 +60,8 @@
     line-height: 1.3333;
     font-size: var(--primary-font-size);
     color: var(--placeholder-text);
-
+}
+.message {
+    overflow: scroll;
+    overflow-x: hidden;
 }

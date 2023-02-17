@@ -1,3 +1,4 @@
+import { async } from '@firebase/util'
 import { doc, onSnapshot } from 'firebase/firestore'
 import React, { useContext, useEffect, useState } from 'react'
 import { db } from '~/firebase'
@@ -7,7 +8,7 @@ import Message from './Message'
 const Messages = () => {
     const [messages, setMessages] = useState([])
     const { data } = useContext(ChatContext)
-
+    const [checkURL, setCheckURL] = useState('')
 
 
     useEffect(() => {
@@ -23,15 +24,15 @@ const Messages = () => {
     return (
         <div className="messages">
             {messages.map((m, index, array) => {
+
                 if (index > 0) {
                     const previousValue = array[index - 1];
                     const CompTime = (m.date.seconds - previousValue.date.seconds) / 60 > 5
                     var CheckTimeSend = CompTime === true ? m.date.seconds : undefined
-                    var CheckShowAvt = m.senderId === previousValue.senderId ? false : true
                 }
                 return <Message message={m} key={m.id}
                     CheckTimeSend={CheckTimeSend}
-                    CheckShowAvt={CheckShowAvt}
+                // CheckURL={checkURL}
                 />
             }
             )}

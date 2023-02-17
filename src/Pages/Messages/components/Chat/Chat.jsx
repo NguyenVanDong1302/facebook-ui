@@ -1,13 +1,10 @@
 import React, { useContext } from 'react'
-import Cam from '~/Asset/ImgMessages/cam.png'
-import Add from '~/Asset/ImgMessages/add.png'
-import More from '~/Asset/ImgMessages/more.png'
 import Messages from './Message/Messages'
 import Input from './Message/Input'
 import { ChatContext } from '../../context/ChatContext'
 import AvatarUser from '~/Components/reuseComponent/Avatar/User/AvatarUser'
 
-import './Chat.scss'
+import '~/Pages/Messages/components/Chat/Chat.scss'
 import { CallIconMessages, DetailIconMessages, VideoCallIconMessages } from '~/Asset'
 import DetailUser from '../DetailUser/DetailUser'
 
@@ -17,6 +14,7 @@ function Chat() {
         const buttonDetail = document.querySelector('.detailUser-wrapper')
         buttonDetail.classList.toggle('detailUser__toggle')
     }
+    // console.log(data);
     return (
         <div className='chat-wrapper'>
             <div className='chat'>

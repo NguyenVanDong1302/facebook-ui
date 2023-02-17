@@ -839,6 +839,14 @@ export const CloseIcon = () => (
         }}
     ></i>
 );
+export const CloseIconBlue = () => (
+    <svg class="xvijh9v xhhsvwb x1ty9z65 xgzva0m" height="24px" viewBox="0 0 24 24" width="24px">
+        <g stroke="#0099ff" stroke-linecap="round" stroke-width="2">
+            <line x1="6" x2="18" y1="6" y2="18"></line>
+            <line x1="6" x2="18" y1="18" y2="6"></line>
+        </g>
+    </svg>
+);
 export const ZoomIcon2 = () => (
     <i
         style={{
@@ -853,8 +861,8 @@ export const ZoomIcon2 = () => (
     ></i>
 );
 
-export const CallIconMessages = () => (
-    <svg height="34px" role="presentation" viewBox="-5 -5 30 30" width="34px">
+export const CallIconMessages = ({ size = '34px' }) => (
+    <svg height={size} role="presentation" viewBox="-5 -5 30 30" width={size}>
         <path
             d="M10.952 14.044c.074.044.147.086.22.125a.842.842 0 001.161-.367c.096-.195.167-.185.337-.42.204-.283.552-.689.91-.772.341-.078.686-.105.92-.11.435-.01 1.118.174 1.926.648a15.9 15.9 0 011.713 1.147c.224.175.37.43.393.711.042.494-.034 1.318-.754 2.137-1.135 1.291-2.859 1.772-4.942 1.088a17.47 17.47 0 01-6.855-4.212 17.485 17.485 0 01-4.213-6.855c-.683-2.083-.202-3.808 1.09-4.942.818-.72 1.642-.796 2.136-.754.282.023.536.17.711.392.25.32.663.89 1.146 1.714.475.808.681 1.491.65 1.926-.024.31-.026.647-.112.921-.11.35-.488.705-.77.91-.236.17-.226.24-.42.336a.841.841 0 00-.368 1.161c.04.072.081.146.125.22a14.012 14.012 0 004.996 4.996z"
             fill="#0084ff"
@@ -867,8 +875,8 @@ export const CallIconMessages = () => (
     </svg>
 );
 
-export const VideoCallIconMessages = () => (
-    <svg height="34px" role="presentation" viewBox="-3 -5 30 30" width="34px">
+export const VideoCallIconMessages = ({ size = '34px' }) => (
+    <svg height={size} role="presentation" viewBox="-3 -5 30 30" width={size}>
         <path
             d="M19.492 4.112a.972.972 0 00-1.01.063l-3.052 2.12a.998.998 0 00-.43.822v5.766a1 1 0 00.43.823l3.051 2.12a.978.978 0 001.011.063.936.936 0 00.508-.829V4.94a.936.936 0 00-.508-.828zM10.996 18A3.008 3.008 0 0014 14.996V5.004A3.008 3.008 0 0010.996 2H3.004A3.008 3.008 0 000 5.004v9.992A3.008 3.008 0 003.004 18h7.992z"
             fill="#0084ff"

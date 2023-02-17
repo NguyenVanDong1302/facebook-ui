@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import Attach from "~/Asset/ImgMessages/attach.png";
 import { AuthContext } from "../../../context/AuthContext";
 import { ChatContext } from "../../../context/ChatContext";
 import {
@@ -13,7 +12,7 @@ import { db, storage } from "~/firebase";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { LikeIconMessages, OtherActionIconMessages, SendIconIconMessages, UploadGifIconMessages, UpLoadImageIconMessages, UpLoadStickerIconMessages } from "~/Asset/Messages/Index";
-import { LikeIcon } from "~/Asset";
+import './Input.scss'
 
 const Input = () => {
     const [text, setText] = useState("");

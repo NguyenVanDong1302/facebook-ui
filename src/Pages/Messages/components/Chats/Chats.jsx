@@ -8,7 +8,6 @@ import AvatarUser from "~/Components/reuseComponent/Avatar/User/AvatarUser";
 
 const Chats = () => {
   const [chats, setChats] = useState([]);
-  const [checkUserSender, setChechUserSender] = useState(false)
   const { currentUser } = useContext(AuthContext);
   const { dispatch } = useContext(ChatContext);
 
@@ -31,16 +30,16 @@ const Chats = () => {
   };
   const now = new Date();
   const secondNow = now.getTime() / 1000
-// console.log(typeof chats);
+
+
   return (
     <div className="chats">
-      {Object.entries(chats)?.sort((a, b) => b[1].date - a[1].date).map((chat) => {
+      {chats !== undefined && Object.entries(chats)?.sort((a, b) => b[1].date - a[1].date).map((chat) => {
         const senderId = chat[1].lastMessage?.senderId
         const userId = currentUser.uid
         let showText = ''
         const lastMess = chat[1].lastMessage?.text === "" ? showText = "đã gửi một tin nhắn" : showText = chat[1].lastMessage?.text
         const secondSend = chat[1].date?.seconds
-
         const HandleTimeSend = () => {
           const timeSend = (secondNow - secondSend) / 60
           if (timeSend < 1) {

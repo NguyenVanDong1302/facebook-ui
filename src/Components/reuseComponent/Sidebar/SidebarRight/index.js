@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ListFriends } from '../../List/List';
 import AvatarUser from '../../Avatar/User/AvatarUser';
 import './SidebarRight.scss';
@@ -11,19 +11,75 @@ import {
     SearchIcon,
     SwitchPageIcon,
 } from '~/Asset';
+import { db } from '~/firebase';
+import { collection, doc, getDoc, getDocs, onSnapshot, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
+import { AuthContext } from '~/Pages/Messages/context/AuthContext';
+import { ChatContext } from '~/Pages/Messages/context/ChatContext';
 
 export const ApiUrl = 'https://6397f76c86d04c7633a1c4d5.mockapi.io/facebook';
 
 function SidebarRight() {
-    const [results, setResults] = useState([]);
+    const [messages, setMessages] = useState([]);
+    // const [user, setUser] = useState(null);
+    const [listUser, setListUser] = useState([]);
+    const usersCollectionRef = collection(db, 'users');
+    const pages = 'home';
+    const { currentUser } = useContext(AuthContext);
+    const { dispatch } = useContext(ChatContext);
+    const { data } = useContext(ChatContext);
 
     useEffect(() => {
-        fetch(ApiUrl)
-            .then((response) => response.json())
-            .then((data) => {
-                setResults(data);
-            });
+        const getUsers = async () => {
+            const data = await getDocs(usersCollectionRef);
+            setListUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        };
+        getUsers();
     }, []);
+
+    const handleSelect = async (user) => {
+        console.log(user);
+        const combinedId = currentUser.uid > user.uid ? currentUser.uid + user.uid : user.uid + currentUser.uid;
+        try {
+            const res = await getDoc(doc(db, 'chats', combinedId));
+            if (!res.exists()) {
+                await setDoc(doc(db, 'chats', combinedId), { messages: [] });
+
+                await updateDoc(doc(db, 'userChats', currentUser.uid), {
+                    [combinedId + '.userInfo']: {
+                        uid: user.uid,
+                        displayName: user.displayName,
+                        photoURL: user.photoURL,
+                    },
+                    [combinedId + '.date']: serverTimestamp(),
+                });
+                await updateDoc(doc(db, 'userChats', user.uid), {
+                    [combinedId + '.userInfo']: {
+                        uid: currentUser.uid,
+                        displayName: currentUser.displayName,
+                        photoURL: currentUser.photoURL,
+                    },
+                    [combinedId + '.date']: serverTimestamp(),
+                });
+            }
+        } catch (err) {}
+
+        dispatch({ type: 'CHANGE_USER', payload: user });
+
+        console.log((combinedId));
+        // setUserName('');
+        const find = document.querySelector(`.${combinedId}`);
+        find.classList.toggle('close-box-chat');
+    };
+
+    useEffect(() => {
+        const unSub = onSnapshot(doc(db, 'chats', data.chatId), (doc) => {
+            doc.exists() && setMessages(doc.data().messages);
+        });
+        return () => {
+            unSub();
+        };
+    }, [data.chatId]);
+
     return (
         <div className="sidebar-right-wrapper">
             <div className="sidebar-right-items">
@@ -86,12 +142,18 @@ function SidebarRight() {
                         </ul>
                     </div>
                     <div className="tag-user__menu__list__user">
-                        {results.map((item, index) => (
-                            <div className="tag-user" key={index}>
-                                <AvatarUser src={item.img} alt={item.name} online={item.online} />
-                                <span className="tag-user__name span-title">{item.name}</span>
-                            </div>
-                        ))}
+                        {listUser.map((item, index) => {
+                            return (
+                                <>
+                                    {currentUser.uid !== item.uid && (
+                                        <div className="tag-user" key={index} onClick={() => handleSelect(item)}>
+                                            <AvatarUser src={item.photoURL} alt={item.displayName} online={true} />
+                                            <span className="tag-user__name span-title">{item.displayName}</span>
+                                        </div>
+                                    )}
+                                </>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
