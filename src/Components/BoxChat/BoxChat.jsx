@@ -30,8 +30,9 @@ function BoxChat() {
                 {listChats.map((item) => (
                     item.chatId !== 'null' && <BoxChatItem data={item} />
                 ))}
-            </div>
         </div>
+            </div>
+
     )
 }
 

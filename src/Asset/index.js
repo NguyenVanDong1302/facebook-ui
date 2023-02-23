@@ -991,3 +991,17 @@ export const FaceIcon = () => (
         }}
     ></i>
 );
+
+export const ArrowIcon = () => (
+    <i
+        style={{
+            height: '12px',
+            width: '12px',
+            backgroundImage: "url('https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/YJXuqBx5ftp.png')",
+            backgroundPosition: '-117px -164px',
+            backgroundSize: 'auto',
+            backgroundRepeat: 'no-repeat',
+            display: 'inline-block',
+        }}
+    ></i>
+);

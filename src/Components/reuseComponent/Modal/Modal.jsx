@@ -37,9 +37,7 @@ function ShowModal() {
 
     return (
         <>
-            <Button variant="primary" onClick={() => setModalShow(true)}>
-                Launch vertically centered modal
-            </Button>
+
 
             <MyVerticallyCenteredModal
                 show={modalShow}
