@@ -59,7 +59,9 @@ import { FriendsColorIcon, GameColorIcon, GroupColorIcon, PlayGameColorIcon, Wat
 import AvatarImage from '../Avatar/Avatar';
 import Button from '../Button/Button';
 import { useState, useEffect } from 'react';
+import { AuthContext } from '~/Pages/Messages/context/AuthContext';
 
+// const { currentUser } = useContext(AuthContext);
 export const ListFeatureUser1 = [
     {
         children: [
@@ -103,7 +105,7 @@ export const ListFeatureUser1 = [
                     <AvatarImage
                         className="avatar__shortcut"
                         src="https://firebasestorage.googleapis.com/v0/b/facebook-ui-6f536.appspot.com/o/image%2Fgroup%2Fdong%20phim%20co.jpg?alt=media&token=65793640-abf2-4c6c-969a-8b062af6de04"
-                        type = 'group'
+                        type="group"
                     />
                 ),
             },
@@ -113,7 +115,7 @@ export const ListFeatureUser1 = [
                     <AvatarImage
                         className="avatar__shortcut"
                         src="https://firebasestorage.googleapis.com/v0/b/facebook-ui-6f536.appspot.com/o/image%2Fgroup%2F271848083_115463984341696_4436017631364347794_n.jpg?alt=media&token=9341408c-e8a5-4a2f-a782-f71d65ab5031"
-                        type = 'group'
+                        type="group"
                     />
                 ),
             },
@@ -123,7 +125,7 @@ export const ListFeatureUser1 = [
                     <AvatarImage
                         className="avatar__shortcut"
                         src="https://firebasestorage.googleapis.com/v0/b/facebook-ui-6f536.appspot.com/o/image%2Fgroup%2F254624638_1981231418700067_1333473650235194706_n.jpg?alt=media&token=84526289-88c5-49e4-a90f-ae5bef583d63"
-                        type = 'group'
+                        type="group"
                     />
                 ),
             },

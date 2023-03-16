@@ -26,7 +26,9 @@ export default function ModalAdd() {
 
     return (
         <div className='modal-add-posts-wrapper' >
-            <Button className='button-modal' onClick={handleOpen}><DesignButton /></Button>
+            <Button className='button-modal' onClick={handleOpen}>
+                <DesignButton />
+            </Button>
             <Modal
                 open={open}
                 onClose={handleClose}

@@ -8,6 +8,7 @@ import Register from './Pages/Messages/page/Register/Register';
 import '~/Styles/Style/StyleMessages.scss';
 import BoxChat from './Components/BoxChat/BoxChat';
 
+
 function App() {
     const location = useLocation();
     const checkPathname = location.pathname.split('/')[1];

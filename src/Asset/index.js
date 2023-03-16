@@ -287,6 +287,7 @@ export const DotHorizontal2Icon = ({ className, width = '24px', height = '24px' 
             height: height,
             backgroundRepeat: 'no-repeat',
             display: 'inline-block',
+            WebkitFilter: 'var(--color-icon-interactive)',
         }}
     ></i>
 );
@@ -836,11 +837,12 @@ export const CloseIcon = () => (
             height: '20px',
             backgroundRepeat: 'no-repeat',
             display: 'inline-block',
+            WebkitFilter: 'var(--filter-secondary-icon)',
         }}
     ></i>
 );
 export const CloseIconBlue = () => (
-    <svg class="xvijh9v xhhsvwb x1ty9z65 xgzva0m" height="24px" viewBox="0 0 24 24" width="24px">
+    <svg height="24px" viewBox="0 0 24 24" width="24px">
         <g stroke="#0099ff" stroke-linecap="round" stroke-width="2">
             <line x1="6" x2="18" y1="6" y2="18"></line>
             <line x1="6" x2="18" y1="18" y2="6"></line>
