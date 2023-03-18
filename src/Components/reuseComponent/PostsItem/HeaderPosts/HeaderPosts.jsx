@@ -27,7 +27,7 @@ function HeaderPosts({ pages, dataUser, dbGroup, datePosts, items }) {
             //     date: Timestamp.now(),
             // })
         });
-        
+
     }
     const handleUpdatePosts = () => {
         function handleChange(event) {
@@ -80,7 +80,8 @@ function HeaderPosts({ pages, dataUser, dbGroup, datePosts, items }) {
                     {pages === 'group' ? (
                         <span className={`span-title span-title__${pages}`}>{dbGroup.name}</span>
                     ) :
-                        <span className={`span-title`}>{dataUser.displayName}</span>
+                        // <span className={`span-title`}>{dataUser.displayName}</span> 
+                        undefined
                     }
                     <div className={'time-post'}>
                         {pages === 'group' ? <span>{dataUser.displayName} · </span> : undefined}
