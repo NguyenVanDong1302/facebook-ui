@@ -84,7 +84,7 @@ function HeaderPosts({ pages, dataUser, dbGroup, datePosts, items }) {
                         undefined
                     }
                     <div className={'time-post'}>
-                        {pages === 'group' ? <span>{dataUser.displayName} · </span> : undefined}
+                        {/* {pages === 'group' ? <span>{dataUser.displayName} · </span> : undefined} */}
                         <span><ShowTime datePosts={datePosts.seconds} /></span>
                         <span>·</span>
                         <span>
