@@ -32,6 +32,8 @@
             }
 
             .userChat__last__messages {
+                display: flex;
+                align-items: center;
                 font-family: inherit;
                 color: var(--secondary-text);
                 padding-top: 1px;

@@ -898,25 +898,12 @@ export const DetailIconMessages = () => (
         </g>
     </svg>
 );
-export const LikeIcon = () => (
-    <i
-        style={{
-            backgroundImage: 'url("https://static.xx.fbcdn.net/rsrc.php/v3/yI/r/9xcZk6oyBTR.png")',
-            backgroundPosition: '0px -251px',
-            backgroundSize: 'auto',
-            width: '18px',
-            height: '18px',
-            backgroundRepeat: 'no-repeat',
-            display: 'inline-block',
-        }}
-    ></i>
-);
 
 export const CommentIcon = () => (
     <i
         style={{
-            backgroundImage: 'url("https://static.xx.fbcdn.net/rsrc.php/v3/yI/r/9xcZk6oyBTR.png")',
-            backgroundPosition: '0px -213px',
+            backgroundImage: 'url("https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/k2J7dFsF8Sd.png")',
+            backgroundPosition: '0px -351px',
             backgroundSize: 'auto',
             width: '18px',
             height: '18px',
@@ -929,8 +916,8 @@ export const CommentIcon = () => (
 export const ShareIcon = () => (
     <i
         style={{
-            backgroundImage: 'url("https://static.xx.fbcdn.net/rsrc.php/v3/yI/r/9xcZk6oyBTR.png")',
-            backgroundPosition: '0px -270px',
+            backgroundImage: 'url("https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/k2J7dFsF8Sd.png")',
+            backgroundPosition: '0px -408px',
             backgroundSize: 'auto',
             width: '18px',
             height: '18px',
@@ -940,32 +927,8 @@ export const ShareIcon = () => (
     ></i>
 );
 
-export const StreamIcon = () => (
-    <i
-        style={{
-            height: '24px',
-            width: '24px',
-            backgroundImage: "url('https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uLT5tbtoukL.png')",
-            backgroundPosition: '0 -58px',
-            backgroundSize: 'auto',
-            backgroundRepeat: 'no-repeat',
-            display: 'inline-block',
-        }}
-    ></i>
-);
-export const ImageIcon = () => (
-    <i
-        style={{
-            height: '24px',
-            width: '24px',
-            backgroundImage: "url('https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uLT5tbtoukL.png')",
-            backgroundPosition: '0 -233px',
-            backgroundSize: 'auto',
-            backgroundRepeat: 'no-repeat',
-            display: 'inline-block',
-        }}
-    ></i>
-);
+export const StreamIcon = () => <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/c0dWho49-X3.png" alt="icon" />;
+export const ImageIcon = () => <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/Ivw7nhRtXyo.png" alt="icon" />;
 export const PenIcon2 = () => (
     <i
         style={{
@@ -980,19 +943,7 @@ export const PenIcon2 = () => (
     ></i>
 );
 
-export const FaceIcon = () => (
-    <i
-        style={{
-            height: '24px',
-            width: '24px',
-            backgroundImage: "url('https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uLT5tbtoukL.png')",
-            backgroundPosition: '0 -183px',
-            backgroundSize: 'auto',
-            backgroundRepeat: 'no-repeat',
-            display: 'inline-block',
-        }}
-    ></i>
-);
+export const FaceIcon = () => <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Y4mYLVOhTwq.png" alt="icon" />;
 
 export const ArrowIcon = () => (
     <i

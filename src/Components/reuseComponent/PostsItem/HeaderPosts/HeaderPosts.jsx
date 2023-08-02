@@ -14,6 +14,7 @@ function HeaderPosts({ pages, dataUser, dbGroup, datePosts, items }) {
     // console.log(items);
     const { currentUser } = useContext(AuthContext)
     const [content, setContent] = useState(items.textContent);
+    // console.log(17, datePosts.seconds)
     const handleSubmit = async (e) => {
         e.preventDefault();
         const checkText = document.querySelector('.update__textContent')
@@ -64,10 +65,7 @@ function HeaderPosts({ pages, dataUser, dbGroup, datePosts, items }) {
                         <span>Chỉnh sửa bài viết</span>
                     </div>
                 }
-
             </Tippy>
-
-
         </>
     }
     return (
@@ -85,7 +83,7 @@ function HeaderPosts({ pages, dataUser, dbGroup, datePosts, items }) {
                     }
                     <div className={'time-post'}>
                         {/* {pages === 'group' ? <span>{dataUser.displayName} · </span> : undefined} */}
-                        <span><ShowTime datePosts={datePosts.seconds} /></span>
+                        <span><ShowTime datePosts={datePosts.seconds}/></span>
                         <span>·</span>
                         <span>
                             <i style={{ height: '12px' }}>

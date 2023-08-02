@@ -7,6 +7,7 @@ import { signOut } from 'firebase/auth';
 import { auth } from '~/firebase';
 import MenuAllFeature from '~/Components/Menu/MenuAllFeature/MenuAllFeature';
 import { MainMenuFeaterUser, MenuCreate } from '~/Components/Menu/ListMenu';
+import { AuthContext } from '~/Pages/Messages/context/AuthContext';
 
 function HeaderRight() {
     const [checked, setChecked] = React.useState(true);
@@ -14,6 +15,7 @@ function HeaderRight() {
     const handleChange = (event) => {
         setChecked(event.target.checked);
     };
+        const { currentUser } = React.useContext(AuthContext);
     return (
         <div className="header-right">
             <ul>
@@ -38,7 +40,7 @@ function HeaderRight() {
                 </li>
                 <li>
                     <div className="">
-                        <AvatarImage />
+                        <AvatarImage src={currentUser?.photoURL} />
                     </div>
                 </li>
                 <li>

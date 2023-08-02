@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 
 function ShowTime({ datePosts }) {
-
     const nowDate = new Date()
     const postsDate = new Date(datePosts * 1000)
     const nowDateSeconds = nowDate.getTime() / 1000
-    const difference = (- datePosts + nowDateSeconds) / 60
+    const difference = (-datePosts + nowDateSeconds) / 60
     // const daysOfWeek = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
     // const dayOfWeek = postsDate.getDay();
     // const abbreviatedDayOfWeek = daysOfWeek[dayOfWeek];

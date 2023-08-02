@@ -16,7 +16,6 @@ const PostsNews = () => {
     // const unsub = onSnapshot(
     //     doc(db, 'testUpdatePosts', '514818e6-2088-4773-8b53-a6533258d31e'),
     //     (doc) => {
-
     //         setDataposts(doc.data());
     //     },
     //     ['514818e6-2088-4773-8b53-a6533258d31e'],

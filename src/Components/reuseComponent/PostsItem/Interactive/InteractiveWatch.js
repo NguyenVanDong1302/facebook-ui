@@ -1,5 +1,6 @@
 import React from 'react';
-import { CommentIcon, DearIcon, HeartPostsIcon, LikeIcon, ShareIcon, WowIcon } from '~/Asset';
+import { CommentIcon, DearIcon, HeartPostsIcon, ShareIcon, WowIcon } from '~/Asset';
+import { LikeIcon } from '~/Asset/IconNews/Icon01';
 
 function InteractiveWatch({ items }) {
     const handleLike = () => {
@@ -17,7 +18,7 @@ function InteractiveWatch({ items }) {
             <ul className={'feature-interactive feature-interactive-watch'}>
                 <li className={`button-like-${items.idPosts}`} onClick={handleLike}>
                     <div>
-                        <LikeIcon />
+                        {/* <LikeIcon /> */}
                         <span className="">Thích</span>
                     </div>
                 </li>

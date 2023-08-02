@@ -12,7 +12,6 @@ function ListTag({ items }) {
     return (
         <div>
             {items.map((item, index) => {
-               
                 if (item.to) {
                     Comp = Link;
                 }

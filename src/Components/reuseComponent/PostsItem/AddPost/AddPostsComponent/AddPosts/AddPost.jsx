@@ -27,19 +27,19 @@ function AddPosts() {
         // const Typefile = handleCheckTypeFile().value
         console.log(Typefile);
         // e.preventDefault();
-        // const checkText = document.querySelector('.input__textContent')
+        const textContent = document.querySelector('.input-text-posts').innerHTML
         // const file = e.target[0].files[0];
         // const textContent = checkText.innerHTML
 
         // if (file === undefined) {
-        //     await updateDoc(doc(db, "testUpdatePosts", '514818e6-2088-4773-8b53-a6533258d31e'), {
-        //         NewsPost: arrayUnion({
-        //             postsId: uuid(),
-        //             textContent,
-        //             usrPosts: currentUser.uid,
-        //             date: Timestamp.now(),
-        //         })
-        //     });
+        // await updateDoc(doc(db, "testUpdatePosts", '514818e6-2088-4773-8b53-a6533258d31e'), {
+        //     NewsPost: arrayUnion({
+        //         postsId: uuid(),
+        //         textContent,
+        //         usrPosts: currentUser.uid,
+        //         date: Timestamp.now(),
+        //     })
+        // });
         // } else {
 
         //     const storageRef = ref(storage, uuid());
@@ -90,7 +90,7 @@ function AddPosts() {
                 <div className='add-posts__header'>
                     <AvatarImage
                         className={('border-avatar-user')}
-                        src="https://i.pinimg.com/564x/8c/38/15/8c3815afd8140fdaf5dab76b8e47b86a.jpg"
+                        src={currentUser?.photoURL}
                     />
                     <div className='add-posts__header__title'>
                         <span className='add-posts__name__user'>{currentUser.displayName}</span>
@@ -101,13 +101,12 @@ function AddPosts() {
                         </span>
                     </div>
                 </div>
-
                 <div className='add-posts-input'>
                     <InputPosts />
                     <button
                         className='button__upload__posts'
                         onClick={handleSubmit}
-                        disabled
+                        // disabled
                     >
                         Đăng
                     </button>

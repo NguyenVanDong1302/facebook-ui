@@ -8,11 +8,11 @@ import Register from './Pages/Messages/page/Register/Register';
 import '~/Styles/Style/StyleMessages.scss';
 import BoxChat from './Components/BoxChat/BoxChat';
 
-
 function App() {
     const location = useLocation();
     const checkPathname = location.pathname.split('/')[1];
     const { currentUser } = useContext(AuthContext);
+    console.log(15, currentUser);
     const ProtectedRoute = ({ children }) => {
         if (!currentUser) {
             return <Navigate to="/login" />;

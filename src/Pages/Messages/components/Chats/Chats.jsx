@@ -5,6 +5,7 @@ import { ChatContext } from "../../context/ChatContext";
 import { db } from "~/firebase";
 import './Chats.scss'
 import AvatarUser from "~/Components/reuseComponent/Avatar/User/AvatarUser";
+import ShowTime from "~/Components/reuseComponent/ShowTime/ShowTime";
 
 const Chats = () => {
   const [chats, setChats] = useState([]);
@@ -40,15 +41,21 @@ const Chats = () => {
         let showText = ''
         const lastMess = chat[1].lastMessage?.text === "" ? showText = "đã gửi một tin nhắn" : showText = chat[1].lastMessage?.text
         const secondSend = chat[1].date?.seconds
+        // console.log(secondSend)
         const HandleTimeSend = () => {
           const timeSend = (secondNow - secondSend) / 60
-          if (timeSend < 1) {
-            return 'vài giây trước'
-          } else {
-            return Math.round(timeSend) + ' phút'
-          }
+          // if (timeSend < 1) {
+          //   return 'vài giây trước'
+          // } else if (timeSend / 60 > 24) {
+          //   return Math.round(timeSend / 60 / 24) + ' ngày trước'
+          // } else if (timeSend > 60) {
+          //   return Math.round(timeSend / 60) + ' giờ trước trước'
+          // }
+          // console.log(53, timeSend) 
+          // return
         }
         const showTimeSend = HandleTimeSend()
+        console.log()
         return (
           <div
             className="userChat"
@@ -60,9 +67,13 @@ const Chats = () => {
               <span>{chat[1].userInfo.displayName}</span>
               <p className="userChat__last__messages">
                 {senderId === userId ? 'Bạn: ' : ''}
-                {lastMess === true && senderId !== userId ? chat[1].userInfo.displayName + "đã gửi cho bạn một tin nhắn" :
+                {lastMess === true && senderId !== userId ?
+                  chat[1].userInfo.displayName + "đã gửi cho bạn một tin nhắn" :
                   showText}
-                {" ·  " + showTimeSend}
+                <span>·</span>
+                <span>
+                  <ShowTime datePosts={secondSend} />
+                </span>
               </p>
             </div>
           </div>

@@ -1,14 +1,15 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { CloseIcon, DotHorizontal2Icon } from '~/Asset';
 import { EventIconPosts, FaceIconPosts, GPSIconPosts, TagFriendsIconPosts, UploadFileIconPosts, UploadImageIconPosts } from '~/Asset/Posts';
 import './InputPosts.scss'
+import { AuthContext } from '~/Pages/Messages/context/AuthContext';
 
 function InputPosts() {
     const [file, setFile] = useState(null);
     const [previewImgSrc, setPreviewImgSrc] = useState(null);
     const [posterImgSrc, setPosterImgSrc] = useState(null);
-
+    const { currentUser } = useContext(AuthContext);
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
         setFile(selectedFile);
@@ -63,10 +64,21 @@ function InputPosts() {
             <span
                 contentEditable="true" id="new-tag"
                 className="badge alert-info input-text-posts"
-                // data-placeholder="Nguyễn Văn Đông ơi, bạn đang nghĩ gì thế?"
                 data-focused-advice="Start typing"
                 onKeyUp={handleDisplayButton}
             ></span>
+            <span className="badge input_content_posts" contentEditable={true}>
+                <>
+                    <style>
+                        {`
+                    span.badge[contentEditable]:empty::before {
+                    content: "${currentUser.displayName} ơi, bạn đang nghĩ gì thế?";
+                    font-weight: 500;
+                    }
+                     `}
+                    </style>
+                </>
+            </span>
 
             {file ? (
                 <div className="preview-container">

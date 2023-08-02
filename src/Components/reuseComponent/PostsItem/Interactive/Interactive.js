@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { CommentIcon, DearIcon, HeartPostsIcon, LikeIcon, ShareIcon, WowIcon } from '~/Asset';
+import { CommentIcon, DearIcon, HeartPostsIcon, ShareIcon, WowIcon } from '~/Asset';
 import './Interactive.scss';
+import { IconComment, IconSharePost, likeIcon } from '~/Asset/IconNews/Icon01';
 
 function Interactive({ items }) {
     const handleLike = () => {
@@ -10,8 +11,8 @@ function Interactive({ items }) {
         const elmLike = document.querySelector(classLike);
         const elmLikeIcon = document.querySelector(classLike + ' i');
         elmLike.classList.value.includes('like-active')
-            ? (elmLikeIcon.style.backgroundPosition = '0px -251px')
-            : (elmLikeIcon.style.backgroundPosition = '0px -232px');
+            ? (elmLikeIcon.style.backgroundPosition = '0px -192px')
+            : (elmLikeIcon.style.backgroundPosition = '0px -173px');
         elmLike.classList.toggle('like-active');
     };
     return (
@@ -36,19 +37,20 @@ function Interactive({ items }) {
             <ul className={'feature-interactive'}>
                 <li className={`button-like-${items.idPosts}`} onClick={handleLike}>
                     <div>
-                        <LikeIcon />
+                        {/* <likeIcon /> */}
+                        {likeIcon}
                         <span className="">Thích</span>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <CommentIcon />
+                        {IconComment}
                         <span>Bình luận</span>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <ShareIcon />
+                        {IconSharePost}
                         <span>Chia sẻ</span>
                     </div>
                 </li>

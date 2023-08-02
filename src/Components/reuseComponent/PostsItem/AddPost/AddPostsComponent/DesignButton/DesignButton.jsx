@@ -15,7 +15,7 @@ function DesignButton() {
                     <div className={('avatar-user')}>
                         <AvatarImage
                             className={('border-avatar-user')}
-                            src="https://i.pinimg.com/564x/8c/38/15/8c3815afd8140fdaf5dab76b8e47b86a.jpg"
+                            src={currentUser?.photoURL}
                         />
                     </div>
                     <div className='b-btn__title'>

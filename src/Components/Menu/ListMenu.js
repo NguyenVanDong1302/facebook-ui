@@ -5,7 +5,6 @@ import {
     DonateColorIcon,
     EventColorIcon,
     FeelColorIcon,
-    FriendsColorIcon,
     GameColorIcon,
     GroupColorIcon,
     LiveColorIcon,
@@ -22,6 +21,7 @@ import {
     StoryColorIcon,
     WatchColorIcon,
 } from '~/Asset/IconColor';
+import { IconFriendColorFul } from '~/Asset/IconNews/Icon2';
 import {
     AdwordsIconOCL,
     CartIconOCL,
@@ -46,7 +46,7 @@ export const MainMenuFeaterUser = () => {
                 {
                     title: 'Bạn bè',
                     detail: 'Tìm kiếm bạn bè hoặc những người có thể biết',
-                    icon: <FriendsColorIcon />,
+                    // icon: { IconFriendColorFul },
                 },
                 {
                     title: 'Nhóm',

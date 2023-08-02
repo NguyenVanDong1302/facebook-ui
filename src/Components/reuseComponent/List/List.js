@@ -55,44 +55,35 @@ import {
     WatchIcon2,
 } from '~/Asset';
 import { NotificationIcon } from '~/Asset/HeaderRight';
-import { FriendsColorIcon, GameColorIcon, GroupColorIcon, PlayGameColorIcon, WatchColorIcon } from '~/Asset/IconColor';
+import { GameColorIcon, GroupColorIcon, PlayGameColorIcon, WatchColorIcon } from '~/Asset/IconColor';
 import AvatarImage from '../Avatar/Avatar';
 import Button from '../Button/Button';
-import { useState, useEffect } from 'react';
-import { AuthContext } from '~/Pages/Messages/context/AuthContext';
+import { IconDatingColorFul, IconFriendColorFul, IconGroupColorFul, IconWatchColorFul } from '~/Asset/IconNews/Icon2';
+import { IconLive } from '~/Asset/IconNews/Icon03';
 
 // const { currentUser } = useContext(AuthContext);
 export const ListFeatureUser1 = [
     {
         children: [
             {
-                title: 'Nguyễn Văn Đông',
-                image: <AvatarImage width="36px" height="36px" />,
-            },
-            {
                 title: 'Bạn bè',
-                image: <FriendsColorIcon />,
+                imageNew: IconFriendColorFul,
                 id: 1,
             },
             {
                 title: 'Watch',
-                image: <WatchColorIcon />,
+                image: IconWatchColorFul,
                 id: 2,
             },
             {
                 title: 'Nhóm',
-                image: <GroupColorIcon />,
+                image: IconGroupColorFul,
                 id: 3,
             },
             {
-                title: 'Video chơi game',
-                image: <GameColorIcon />,
+                title: 'Hẹn Hò',
+                image: IconDatingColorFul,
                 id: 4,
-            },
-            {
-                title: 'Gần đây nhất',
-                image: <PlayGameColorIcon />,
-                id: 5,
             },
         ],
     },
@@ -146,7 +137,7 @@ export const ListFeatureWatch = [
             },
             {
                 title: 'Trực tiếp',
-                icon: <LiveIcon />,
+                icon: IconLive,
                 to: '/watch/live',
             },
             {
